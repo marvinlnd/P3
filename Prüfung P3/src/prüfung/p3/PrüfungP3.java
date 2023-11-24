@@ -43,16 +43,12 @@ public class PrüfungP3 extends JFrame{
         
         panel.setLayout(new FlowLayout());
         
-        panel.add(new JButton("KLR"));
-        panel.add(new JButton("Mathe 1"));
-        panel.add(new JButton("Mathe 2"));
         
-        panel2.add(new JButton("Test"));
         
         panel4.add(new JButton("Module"), BorderLayout.WEST);
         panel4.add(new JButton("Belegte Module"));
         
-        panel4.add(new JButton("Abgeschlossen"));
+        panel4.add(new JButton("Abgeschlossene Module"));
         
        // panel2.add(new JButton("Mathe1"));
         
