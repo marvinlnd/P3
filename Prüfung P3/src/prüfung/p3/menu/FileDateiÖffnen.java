@@ -4,17 +4,16 @@
  */
 package prüfung.p3.menu;
 
-import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 /**
  *
  * @author lindn
  */
-public class FileDatei extends JMenu{
+public class FileDateiÖffnen extends JMenuItem{
     
-    FileDatei(){
-        super("Datei");
-        this.add(new FileDateiÖffnen());
-    }
+    FileDateiÖffnen(){
+    super("Öffnen");
+}
     
 }
