@@ -25,11 +25,16 @@ public class PrüfungP3 extends JFrame{
     public static void main(String[] args) {
         
         PrüfungP3 fenster = new PrüfungP3();
+        PrüfungP3 fensterBelegteModule = new PrüfungP3();
         
         fenster.setSize(500, 300);
         fenster.setJMenuBar(new FileMenuBar());
         fenster.setVisible(true);
         fenster.addWindowListener(new WindowEventListener());
+        
+        fensterBelegteModule.setJMenuBar(new FileMenuBar());
+        fensterBelegteModule.setVisible(false);
+        fensterBelegteModule.addWindowListener(new WindowEventListener());
         
         JPanel panel = new JPanel();        
         JPanel panel2 = new JPanel();
@@ -45,17 +50,11 @@ public class PrüfungP3 extends JFrame{
         
         
         
-        panel4.add(new JButton("Module"), BorderLayout.WEST);
-        panel4.add(new JButton("Belegte Module"));
+        panel2.add(new JButton("Module"), BorderLayout.WEST);
+        panel2.add(new JButton("Belegte Module"));
         
-        panel4.add(new JButton("Abgeschlossene Module"));
-        
-       // panel2.add(new JButton("Mathe1"));
-        
-        
-        
-       
-        
+        panel2.add(new JButton("Abgeschlossene Module"));
+ 
     }
     
 }
