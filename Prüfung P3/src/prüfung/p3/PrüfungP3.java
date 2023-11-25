@@ -35,25 +35,20 @@ public class PrüfungP3 extends JFrame{
         fensterBelegteModule.setJMenuBar(new FileMenuBar());
         fensterBelegteModule.setVisible(false);
         fensterBelegteModule.addWindowListener(new WindowEventListener());
+        fensterBelegteModule.setSize(500, 300);
         
         JPanel panel = new JPanel();        
-        JPanel panel2 = new JPanel();
-        JPanel panel3 = new JPanel();
-        JPanel panel4 = new JPanel();
+        JPanel panelStartseite = new JPanel();
         
-        fenster.add(panel, BorderLayout.WEST);
-        fenster.add(panel2, BorderLayout.CENTER);
-        fenster.add(panel3, BorderLayout.EAST);   
-        fenster.add(panel4, BorderLayout.NORTH);
-        
+        fenster.add(panelStartseite, BorderLayout.CENTER);
+  
         panel.setLayout(new FlowLayout());
         
         
         
-        panel2.add(new JButton("Module"), BorderLayout.WEST);
-        panel2.add(new JButton("Belegte Module"));
-        
-        panel2.add(new JButton("Abgeschlossene Module"));
+        panelStartseite.add(new JButton("Module"), BorderLayout.WEST);
+        panelStartseite.add(new JButton("Belegte Module"));    
+        panelStartseite.add(new JButton("Abgeschlossene Module"));
  
     }
     
