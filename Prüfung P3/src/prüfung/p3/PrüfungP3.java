@@ -4,52 +4,45 @@
  */
 package prüfung.p3;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import prüfung.p3.listener.WindowEventListener;
 import prüfung.p3.menu.FileMenuBar;
+import prüfung.p3.tabs.ModuleTab;
 
-/**
- *
- * @author lindn
- */
-public class PrüfungP3 extends JFrame{
+public class PrüfungP3 extends JFrame {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        PrüfungP3 fenster = new PrüfungP3();
-        PrüfungP3 fensterBelegteModule = new PrüfungP3();
-        
-        fenster.setSize(500, 300);
-        fenster.setJMenuBar(new FileMenuBar());
-        fenster.setVisible(true);
-        fenster.addWindowListener(new WindowEventListener());
-        
-        fensterBelegteModule.setJMenuBar(new FileMenuBar());
-        fensterBelegteModule.setVisible(false);
-        fensterBelegteModule.addWindowListener(new WindowEventListener());
-        fensterBelegteModule.setSize(500, 300);
-        
-        JPanel panel = new JPanel();        
-        JPanel panelStartseite = new JPanel();
-        
-        fenster.add(panelStartseite, BorderLayout.CENTER);
-  
-        panel.setLayout(new FlowLayout());
-        
-        
-        
-        panelStartseite.add(new JButton("Module"), BorderLayout.WEST);
-        panelStartseite.add(new JButton("Belegte Module"));    
-        panelStartseite.add(new JButton("Abgeschlossene Module"));
- 
+    public PrüfungP3() {
+        this.setSize(500, 300);
+        this.setJMenuBar(new FileMenuBar());
+        this.addWindowListener(new WindowEventListener());
+        initTabs(); // Methode zum Hinzufügen der Tabs aufrufen
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
     }
-    
+
+    private void initTabs() {
+        JTabbedPane tabbedPane = new JTabbedPane();
+
+        // Erster Tab: Module
+        ModuleTab moduleTab = new ModuleTab();
+        tabbedPane.addTab("Module", moduleTab.getPanel());
+
+        // Zweiter Tab: Belegte Module
+        JPanel panelBelegteModule = new JPanel();
+        tabbedPane.addTab("Belegte Module", panelBelegteModule);
+
+        // Dritter Tab: Abgeschlossene Module
+        JPanel panelAbgeschlosseneModule = new JPanel();
+        tabbedPane.addTab("Abgeschlossene Module", panelAbgeschlosseneModule);
+
+        this.add(tabbedPane);
+    }
+
+    public static void main(String[] args) {
+        new PrüfungP3();
+    }
 }
+
+

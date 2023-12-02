@@ -4,18 +4,28 @@
  */
 package prüfung.p3.menu;
 
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
-/**
- *
- * @author lindn
- */
-public class FileMenuBar extends JMenuBar{
-    
-    public FileMenuBar(){
-        
-        this.add(new FileDatei());
-        
+public class FileMenuBar extends JMenuBar {
+
+    public FileMenuBar() {
+        JMenu fileMenu = new JMenu("Datei");
+        JMenuItem fileNew = new JMenuItem("Neu");
+        JMenuItem fileOpen = new JMenuItem("Öffnen");
+        JMenuItem fileExit = new JMenuItem("Beenden");
+
+        fileMenu.add(fileNew);
+        fileMenu.add(fileOpen);
+        fileMenu.addSeparator();
+        fileMenu.add(fileExit);
+
+        this.add(fileMenu);
+
+        // Hier wird der Text über den Tabs gesetzt
+        JMenu studiengangMenu = new JMenu("Studiengang: Wirtschaftsinformatik");
+        this.add(studiengangMenu);
     }
-    
 }
+

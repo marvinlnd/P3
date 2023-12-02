@@ -4,10 +4,13 @@
  */
 package prüfung.p3.menu;
 
-/**
- *
- * @author lindn
- */
-public class FileDateiNeu {
-    
+import javax.swing.JMenuItem;
+
+public class FileDateiNeu extends JMenuItem {
+
+    public FileDateiNeu() {
+        super("Neu"); // Setze den Text für das JMenuItem
+        // Weitere Initialisierungen, wenn erforderlich
+    }
 }
+
