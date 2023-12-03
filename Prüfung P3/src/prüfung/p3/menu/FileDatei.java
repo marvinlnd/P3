@@ -15,5 +15,9 @@ public class FileDatei extends JMenu {
         super("Datei");
         this.add(new FileDateiÖffnen());
         this.add(new FileDateiNeu()); // Stelle sicher, dass der Konstruktor korrekt ist
+        this.addSeparator();
+        this.add(new FileDateiSpeichern());
+        this.addSeparator();
+        this.add(new FileDateiBeenden());
     }
 }

@@ -6,7 +6,7 @@ package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
 
-public class FileDateiNeu extends JMenuItem {
+class FileDateiNeu extends JMenuItem {
 
     public FileDateiNeu() {
         super("Neu"); // Setze den Text für das JMenuItem

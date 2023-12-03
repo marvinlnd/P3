@@ -10,10 +10,10 @@ import javax.swing.JMenuItem;
  *
  * @author lindn
  */
-public class FileDateiÖffnen extends JMenuItem{
+ class FileDateiBeenden extends JMenuItem{
     
-    public FileDateiÖffnen(){
-    super("Öffnen");
+    public FileDateiBeenden() {
+    super("Beenden");
 }
     
 }
