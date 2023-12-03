@@ -6,7 +6,6 @@ package prüfung.p3.menu;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 
 public class FileMenuBar extends JMenuBar {
 

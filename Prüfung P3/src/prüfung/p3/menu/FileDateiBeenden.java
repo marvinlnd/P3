@@ -5,6 +5,7 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
+import prüfung.p3.listener.BeendenListener;
 
 /**
  *
@@ -14,6 +15,7 @@ import javax.swing.JMenuItem;
     
     public FileDateiBeenden() {
     super("Beenden");
+    this.addActionListener(new BeendenListener());
 }
     
 }
