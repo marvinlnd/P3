@@ -17,7 +17,7 @@ public class PrüfungP3 extends JFrame {
         this.setSize(500, 300);
         this.setJMenuBar(new FileMenuBar());
         this.addWindowListener(new WindowEventListener());
-        initTabs(); // Methode zum Hinzufügen der Tabs aufrufen
+        initTabs();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
