@@ -5,6 +5,7 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
+import prüfung.p3.listener.SpracheDeutschListener;
 
 /**
  *
@@ -13,5 +14,6 @@ import javax.swing.JMenuItem;
 public class FileEinstellungenSpracheDeutsch extends JMenuItem{
     FileEinstellungenSpracheDeutsch(){
         super("Deutsch");
+        this.addActionListener(new SpracheDeutschListener());
     }
 }
