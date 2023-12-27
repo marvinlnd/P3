@@ -17,5 +17,6 @@ public class FileEinstellungenSprache extends JMenu{
         super(SpracheVariablen.sprachauswahl);
         this.add(new FileEinstellungenSpracheEnglisch());
         this.add(new FileEinstellungenSpracheSpanisch());
+        this.add(new FileEinstellungenSpracheDeutsch());
     }
 }
