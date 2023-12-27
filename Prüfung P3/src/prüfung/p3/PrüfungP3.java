@@ -16,7 +16,7 @@ public class PrüfungP3 extends JFrame {
     
     private static PrüfungP3 ursprünglichesFenster;
     
-
+    
     public PrüfungP3() {
         
         if(ursprünglichesFenster != null){
@@ -36,15 +36,15 @@ public class PrüfungP3 extends JFrame {
     private void initTabs() {
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        // Erster Tab: Module
+        
         ModuleTab moduleTab = new ModuleTab();
         tabbedPane.addTab(SpracheVariablen.module, moduleTab.getPanel());
 
-        // Zweiter Tab: Belegte Module
+        
         JPanel panelBelegteModule = new JPanel();
         tabbedPane.addTab(SpracheVariablen.belegteModule, panelBelegteModule);
 
-        // Dritter Tab: Abgeschlossene Module
+        
         JPanel panelAbgeschlosseneModule = new JPanel();
         tabbedPane.addTab(SpracheVariablen.abgeschlosseneModule, panelAbgeschlosseneModule);
 
