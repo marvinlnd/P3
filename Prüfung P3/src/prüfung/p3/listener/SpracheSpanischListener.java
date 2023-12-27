@@ -30,6 +30,7 @@ public class SpracheSpanischListener implements ActionListener{
         SpracheVariablen.belegteModule = "Módulos ocupados";
         SpracheVariablen.abgeschlosseneModule = "Módulos completados";
 
+        
         new PrüfungP3();
     }
     

@@ -13,8 +13,18 @@ import prüfung.p3.sprachauswahl.SpracheVariablen;
 import prüfung.p3.tabs.ModuleTab;
 
 public class PrüfungP3 extends JFrame {
+    
+    private static PrüfungP3 ursprünglichesFenster;
+    
 
     public PrüfungP3() {
+        
+        if(ursprünglichesFenster != null){
+            ursprünglichesFenster.dispose();
+        }
+        
+        ursprünglichesFenster = this;
+        
         this.setSize(500, 300);
         this.setJMenuBar(new FileMenuBar());
         this.addWindowListener(new WindowEventListener());
