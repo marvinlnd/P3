@@ -5,6 +5,7 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 /**
  *
@@ -13,7 +14,7 @@ import javax.swing.JMenuItem;
 public class FileDateiÖffnen extends JMenuItem{
     
     public FileDateiÖffnen(){
-    super("Öffnen");
+    super(SpracheVariablen.dateiÖffnen);
 }
     
 }

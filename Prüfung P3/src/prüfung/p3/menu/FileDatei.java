@@ -5,6 +5,7 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenu;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 /**
  *
@@ -12,7 +13,7 @@ import javax.swing.JMenu;
  */
 public class FileDatei extends JMenu {
     public FileDatei() {
-        super("Datei");
+        super(SpracheVariablen.datei);
         this.add(new FileDateiÖffnen());
         this.add(new FileDateiNeu());
         this.addSeparator();

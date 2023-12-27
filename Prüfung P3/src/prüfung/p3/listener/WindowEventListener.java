@@ -19,7 +19,8 @@ public class WindowEventListener implements WindowListener{
 
     @Override
     public void windowClosing(WindowEvent e) {
-        System.exit(0);
+      
+        
     }
 
     @Override

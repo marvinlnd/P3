@@ -5,12 +5,12 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 class FileDateiNeu extends JMenuItem {
 
     public FileDateiNeu() {
-        super("Neu"); // Setze den Text für das JMenuItem
-        // Weitere Initialisierungen, wenn erforderlich
+        super(SpracheVariablen.neu); 
     }
 }
 

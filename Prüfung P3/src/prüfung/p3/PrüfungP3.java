@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import prüfung.p3.listener.WindowEventListener;
 import prüfung.p3.menu.FileMenuBar;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 import prüfung.p3.tabs.ModuleTab;
 
 public class PrüfungP3 extends JFrame {
@@ -18,7 +19,7 @@ public class PrüfungP3 extends JFrame {
         this.setJMenuBar(new FileMenuBar());
         this.addWindowListener(new WindowEventListener());
         initTabs();
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
     }
 
@@ -27,21 +28,21 @@ public class PrüfungP3 extends JFrame {
 
         // Erster Tab: Module
         ModuleTab moduleTab = new ModuleTab();
-        tabbedPane.addTab("Module", moduleTab.getPanel());
+        tabbedPane.addTab(SpracheVariablen.module, moduleTab.getPanel());
 
         // Zweiter Tab: Belegte Module
         JPanel panelBelegteModule = new JPanel();
-        tabbedPane.addTab("Belegte Module", panelBelegteModule);
+        tabbedPane.addTab(SpracheVariablen.belegteModule, panelBelegteModule);
 
         // Dritter Tab: Abgeschlossene Module
         JPanel panelAbgeschlosseneModule = new JPanel();
-        tabbedPane.addTab("Abgeschlossene Module", panelAbgeschlosseneModule);
+        tabbedPane.addTab(SpracheVariablen.abgeschlosseneModule, panelAbgeschlosseneModule);
 
         this.add(tabbedPane);
     }
 
     public static void main(String[] args) {
-        new PrüfungP3();
+       new PrüfungP3();
     }
 }
 

@@ -5,6 +5,7 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenu;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 
 /**
@@ -13,6 +14,7 @@ import javax.swing.JMenu;
  */
 public class FileEinstellungenSprache extends JMenu{
     FileEinstellungenSprache(){
-        super("Sprachauswahl");
+        super(SpracheVariablen.sprachauswahl);
+        this.add(new FileEinstellungenSpracheEnglisch());
     }
 }

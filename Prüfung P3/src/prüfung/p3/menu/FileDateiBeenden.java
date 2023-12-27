@@ -6,6 +6,7 @@ package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
 import prüfung.p3.listener.BeendenListener;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 /**
  *
@@ -14,7 +15,7 @@ import prüfung.p3.listener.BeendenListener;
  class FileDateiBeenden extends JMenuItem{
     
     public FileDateiBeenden() {
-    super("Beenden");
+    super(SpracheVariablen.beenden);
     this.addActionListener(new BeendenListener());
 }
     

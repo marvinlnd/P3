@@ -5,16 +5,17 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
-import prüfung.p3.sprachauswahl.SpracheVariablen;
+import prüfung.p3.listener.SpracheEnglischListener;
 
 /**
  *
  * @author lindn
  */
-public class FileDateiSpeichern extends JMenuItem{
+public class FileEinstellungenSpracheEnglisch extends JMenuItem{
     
-    public FileDateiSpeichern(){
-        super(SpracheVariablen.speichern);
+    FileEinstellungenSpracheEnglisch(){
+        super("English");
+        this.addActionListener(new SpracheEnglischListener());
     }
     
 }
