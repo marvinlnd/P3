@@ -26,6 +26,9 @@ public class SpracheSpanischListener implements ActionListener{
         SpracheVariablen.einstellungen = "Ajustes";
         SpracheVariablen.sprachauswahl = "Idioma";
         
+        SpracheVariablen.hilfe = "Ayuda";
+        SpracheVariablen.hilfeText = "Manual";
+        
         SpracheVariablen.module = "Módulos";
         SpracheVariablen.belegteModule = "Módulos ocupados";
         SpracheVariablen.abgeschlosseneModule = "Módulos completados";

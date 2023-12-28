@@ -19,6 +19,9 @@ public class SpracheVariablen {
     public static String einstellungen = "Einstellungen";
     public static String sprachauswahl = "Sprachauswahl";
     
+    public static String hilfe = "Hilfe";
+    public static String hilfeText = "Anleitung";
+    
     public static String module = "Module";
     public static String belegteModule = "Belegte Module";
     public static String abgeschlosseneModule = "Abgeschlossene Module";

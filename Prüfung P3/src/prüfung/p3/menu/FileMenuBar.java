@@ -12,8 +12,9 @@ public class FileMenuBar extends JMenuBar {
     public FileMenuBar() {
         this.add(new FileDatei());
         this.add(new FileEinstellungen());
+        this.add(new FileHilfe());
 
-        // Hier wird der Text über den Tabs gesetzt
+        
         JMenu studiengangMenu = new JMenu("Studiengang: Wirtschaftsinformatik");
         this.add(studiengangMenu);
     }
