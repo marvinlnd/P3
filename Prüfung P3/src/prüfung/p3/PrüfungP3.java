@@ -10,6 +10,8 @@ import javax.swing.JTabbedPane;
 import prüfung.p3.listener.WindowEventListener;
 import prüfung.p3.menu.FileMenuBar;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
+import prüfung.p3.tabs.AbgeschlosseneModuleTab;
+import prüfung.p3.tabs.BelegteModuleTab;
 import prüfung.p3.tabs.ModuleTab;
 
 public class PrüfungP3 extends JFrame {
@@ -41,12 +43,12 @@ public class PrüfungP3 extends JFrame {
         tabbedPane.addTab(SpracheVariablen.module, moduleTab.getPanel());
 
         
-        JPanel panelBelegteModule = new JPanel();
-        tabbedPane.addTab(SpracheVariablen.belegteModule, panelBelegteModule);
+        BelegteModuleTab belegteModuleTab = new BelegteModuleTab();
+        tabbedPane.addTab(SpracheVariablen.belegteModule, belegteModuleTab.getPanel());
 
         
-        JPanel panelAbgeschlosseneModule = new JPanel();
-        tabbedPane.addTab(SpracheVariablen.abgeschlosseneModule, panelAbgeschlosseneModule);
+        AbgeschlosseneModuleTab abgeschlosseneModuleTab = new AbgeschlosseneModuleTab();
+        tabbedPane.addTab(SpracheVariablen.abgeschlosseneModule, abgeschlosseneModuleTab.getPanel());
 
         this.add(tabbedPane);
     }

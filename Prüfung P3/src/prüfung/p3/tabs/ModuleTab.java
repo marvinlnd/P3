@@ -29,7 +29,25 @@ public class ModuleTab {
                 {"Kosten- und Leistungsrechnung", "/", "Nein"},
                 {"Software Engineering", "/", "Nein"},
                 {"Programmieren 2", "/", "Nein"},
-                {"IT-Projektmanagement", "/", "Nein"}
+                {"IT-Projektmanagement", "/", "Nein"},
+                {"Organisation und Führung", "/", "Nein"},
+                {"IT-Controlling", "/", "Nein"},
+                {"Datenbanken", "/", "Nein"},
+                {"Datenkommunikation", "/", "Nein"},
+                {"Programmieren 3", "/", "Nein"},
+                {"Geschäftsprozesse", "/", "Nein"},
+                {"Marketing und Strategie", "/", "Nein"},
+                {"Investition und Finanzierung", "/", "Nein"},
+                {"Interdisziplinäres IT-Projet", "/", "Nein"},
+                {"Business Intelligence", "/", "Nein"},
+                {"Verteilte Anwendungen", "/", "Nein"},
+                {"Betriebliche Anwendungssysteme", "/", "Nein"},
+                {"Unternehmensplanung", "/", "Nein"},
+                {"Artificial Intelligence", "/", "Nein"},
+                {"Wahlpflichtmodul 1", "/", "Nein"},
+                {"Wahlpflichtmodul 2", "/", "Nein"},
+                {"Wahlpflichtmodul 3", "/", "Nein"},
+                {"User-Centered Design", "/", "Nein"}
                 // Weitere Module hinzufügen...
         };
 
