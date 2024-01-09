@@ -9,6 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.BorderLayout;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 public class BelegteModuleTab {
     private final JPanel panel;
@@ -26,7 +27,7 @@ public class BelegteModuleTab {
                 {"IT-Projektmanagement", "/", "Nein"}
         };
 
-        String[] columns = {"Modulname", "Note", "Bestanden"};
+        String[] columns = {SpracheVariablen.modulName, SpracheVariablen.note, SpracheVariablen.bestanden};
 
         // Tabelle erstellen
         DefaultTableModel model = new DefaultTableModel(data, columns);

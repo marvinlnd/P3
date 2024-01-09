@@ -26,4 +26,8 @@ public class SpracheVariablen {
     public static String belegteModule = "Belegte Module";
     public static String abgeschlosseneModule = "Abgeschlossene Module";
     
+    public static String modulName = "Name";
+    public static String note = "Note";
+    public static String bestanden = "Bestanden";
+    
 }
