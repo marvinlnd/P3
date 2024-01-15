@@ -26,6 +26,8 @@ public class SpracheDeutschListener implements ActionListener{
         SpracheVariablen.einstellungen = "Einstellungen";
         SpracheVariablen.sprachauswahl = "Sprache";
         
+        SpracheVariablen.hilfe = "Hilfe";
+        
         SpracheVariablen.module = "Module";
         SpracheVariablen.belegteModule = "Belegte Module";
         SpracheVariablen.abgeschlosseneModule = "Abgeschlossene Module";
