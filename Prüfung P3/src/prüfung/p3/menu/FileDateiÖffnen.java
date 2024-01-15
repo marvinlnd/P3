@@ -5,6 +5,7 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
+import prüfung.p3.icons.ErstelltesIcon;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 /**
@@ -15,6 +16,9 @@ public class FileDateiÖffnen extends JMenuItem{
     
     public FileDateiÖffnen(){
     super(SpracheVariablen.dateiÖffnen);
+    String pfad = "/prüfung/p3/icons/52.gif";
+        
+        setIcon(ErstelltesIcon.createIcon(pfad, 14, 14));
 }
     
 }
