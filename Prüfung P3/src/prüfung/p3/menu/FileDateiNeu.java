@@ -5,12 +5,14 @@
 package prüfung.p3.menu;
 
 import javax.swing.JMenuItem;
+import prüfung.p3.listener.DateiNeuListener;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 class FileDateiNeu extends JMenuItem {
 
     public FileDateiNeu() {
         super(SpracheVariablen.neu); 
+        this.addActionListener(new DateiNeuListener());
     }
 }
 
