@@ -14,12 +14,14 @@ public class kursObjekt {
     private String nameDozent;
     private int semester;
     private int note;
+    private boolean bestanden;
     
-    public kursObjekt(String fach, String nameDozent, int semester, int note) {
+    public kursObjekt(String fach, String nameDozent, int semester, int note, boolean bestanden) {
         this.fach = fach;
         this.nameDozent = nameDozent;
         this.semester = semester;
         this.note = note;
+        this.bestanden = bestanden;
     }
 
     // Getter und Setter
@@ -64,12 +66,21 @@ public class kursObjekt {
         this.note = note;
     }
     
+        public boolean getBestanden () {
+        return bestanden;
+    }
+    
+    public void bestanden (boolean bestanden) {
+        this.note = note;
+    }
+    
     
     public void displayObjektInfo() {
         System.out.println("Fach Name: " + fach);
         System.out.println("Dozent: " + nameDozent);
         System.out.println("Current Semester: " + semester);
         System.out.println("Note: " + note);
+        System.out.println("Bestanden" + bestanden);
     }
 
 
