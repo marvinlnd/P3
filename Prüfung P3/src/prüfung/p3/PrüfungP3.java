@@ -6,6 +6,7 @@ package prüfung.p3;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -19,7 +20,6 @@ import prüfung.p3.tabs.ModuleTab;
 public class PrüfungP3 extends JFrame {
     
     private static PrüfungP3 ursprünglichesFenster;
-    Icon icon = new ImageIcon("C:\\Studium\\Semester 1\\Grundlagen der Informatik\\P3\\Prüfung P3\\build\\classes\\prüfung\\p3\\icons\\15");
     
     public PrüfungP3() {
         
@@ -35,6 +35,7 @@ public class PrüfungP3 extends JFrame {
         initTabs();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
+        this.add(new JButton("Hallo"));
     }
 
     private void initTabs() {
