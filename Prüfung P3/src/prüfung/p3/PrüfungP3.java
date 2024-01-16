@@ -4,12 +4,16 @@
  */
 package prüfung.p3;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import prüfung.p3.icons.ErstelltesIcon;
+import prüfung.p3.kursObjekt.kursObjekt;
 import prüfung.p3.listener.WindowEventListener;
 import prüfung.p3.menu.FileMenuBar;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
@@ -35,7 +39,15 @@ public class PrüfungP3 extends JFrame {
         initTabs();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
-        this.add(new JButton("Hallo"));
+        
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        
+        JButton hinzufügen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/78.gif", 16, 16));
+        JButton entfernen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/14.gif", 16, 16));
+        buttonPanel.add(hinzufügen);
+        buttonPanel.add(entfernen);
+        
+        this.add(buttonPanel, BorderLayout.SOUTH);
     }
 
     private void initTabs() {
