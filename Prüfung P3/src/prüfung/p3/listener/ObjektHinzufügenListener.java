@@ -6,18 +6,27 @@ package prüfung.p3.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
+import prüfung.p3.kursObjekt.KursObjektGUI;
+import prüfung.p3.kursObjekt.KursObjektMethoden;
+import prüfung.p3.kursObjekt.kursObjekt;
 
 /**
  *
  * @author lindn
  */
-public class HilfeListener implements ActionListener{
+public class ObjektHinzufügenListener implements ActionListener{
+    
+    private final KursObjektGUI GUI;
+     public ObjektHinzufügenListener(KursObjektGUI gui) {
+        this.GUI = gui;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(null, "Um ein Modul hinzuzufügen, klicken Sie auf das Plus."
-                + " Um ein Modul zu löschen, drücken Sie auf das Minus");
+        
+    
+
+        
     }
     
 }

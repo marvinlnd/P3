@@ -6,8 +6,6 @@ package prüfung.p3;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;

@@ -13,10 +13,10 @@ public class kursObjekt {
     private String fach;
     private String nameDozent;
     private int semester;
-    private int note;
+    private double note;
     private boolean bestanden;
     
-    public kursObjekt(String fach, String nameDozent, int semester, int note, boolean bestanden) {
+    public kursObjekt(String fach, String nameDozent, int semester, double note, boolean bestanden) {
         this.fach = fach;
         this.nameDozent = nameDozent;
         this.semester = semester;
@@ -58,7 +58,7 @@ public class kursObjekt {
 
     
 // Für die Note    
-    public int getNote () {
+    public double getNote () {
         return note;
     }
     
