@@ -61,7 +61,7 @@ public class KursObjektGUI extends JFrame{
         
         add(panel);
         pack();
-        setVisible(true);
+        setVisible(false);
 
         
     }

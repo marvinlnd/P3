@@ -7,26 +7,17 @@ package prüfung.p3.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import prüfung.p3.kursObjekt.KursObjektGUI;
-import prüfung.p3.kursObjekt.KursObjektMethoden;
-import prüfung.p3.kursObjekt.kursObjekt;
 
 /**
  *
  * @author lindn
  */
-public class ObjektHinzufügenListener implements ActionListener{
-    
-    private KursObjektGUI GUI;
-     public ObjektHinzufügenListener(KursObjektGUI gui) {
-        this.GUI = gui;
-    }
+public class ObjektFensterHinzufügenÖffnen implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-    
-
-        
+        KursObjektGUI gui = new KursObjektGUI();
+        gui.setVisible(true);
     }
     
 }
