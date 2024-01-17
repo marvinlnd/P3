@@ -24,10 +24,10 @@ public class kursObjekt {
         this.bestanden = bestanden;
     }
 
-    // Getter und Setter
+ 
   
     
-// Für das Fach     
+    
  public String getFach() {
         return fach;
     }

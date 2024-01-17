@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import prüfung.p3.icons.ErstelltesIcon;
+import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
 
 /**
  *
@@ -42,6 +43,7 @@ public class KursObjektGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Ja");
+             
                 KursObjektMethoden.addKursObjekt(new KursObjektGUI());
                 
             }
@@ -61,7 +63,7 @@ public class KursObjektGUI extends JFrame{
         
         add(panel);
         pack();
-        setVisible(false);
+        setVisible(true);
 
         
     }

@@ -17,7 +17,7 @@ public class ObjektFensterHinzufügenÖffnen implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         KursObjektGUI gui = new KursObjektGUI();
-        gui.setVisible(true);
+        
     }
     
 }
