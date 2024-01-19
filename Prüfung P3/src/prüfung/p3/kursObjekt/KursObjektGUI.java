@@ -20,35 +20,44 @@ import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
  *
  * @author lindn
  */
-public class KursObjektGUI extends JFrame{
-    
+public class KursObjektGUI extends JFrame {
+
     protected static JTextField modul;
     protected static JTextField note;
     protected static JTextField dozent;
     protected static JTextField semester;
     protected static JCheckBox bestanden;
-    
-    public KursObjektGUI(){
+
+    public KursObjektGUI() {
         super("KursObjekt GUI");
-        
+
         modul = new JTextField(10);
         note = new JTextField(10);
         dozent = new JTextField(10);
         semester = new JTextField(10);
-        bestanden = new JCheckBox("Bestanden: ");
-        
+
         JButton bestätigen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/92.gif", 16, 16));
-        
+
+       
         bestätigen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Ja");
-             
-                KursObjektMethoden.addKursObjekt(new KursObjektGUI());
+                System.out.println("Modul: " + modul.getText());
+                System.out.println("Dozent: " + dozent.getText());
+                System.out.println("Semester: " + semester.getText());
+                System.out.println("Note: " + note.getText());
+
+                KursObjektMethoden.addKursObjekt(ObjektFensterHinzufügenÖffnen.gui);
                 
+                System.out.println("Modul: " + modul.getText());
+                System.out.println("Dozent: " + dozent.getText());
+                System.out.println("Semester: " + semester.getText());
+                System.out.println("Note: " + note.getText());
+
             }
         });
-        
+
         JPanel panel = new JPanel();
         panel.add(new JLabel("Modul: "));
         panel.add(modul);
@@ -58,16 +67,16 @@ public class KursObjektGUI extends JFrame{
         panel.add(dozent);
         panel.add(new JLabel("Semester der Belegung: "));
         panel.add(semester);
-        panel.add(bestanden);
+
         panel.add(bestätigen);
-        
+
         add(panel);
         pack();
         setVisible(true);
 
-        
     }
+
     public void showInfoDialog(String message) {
-         JOptionPane.showMessageDialog(this, message);
+        JOptionPane.showMessageDialog(this, message);
     }
 }

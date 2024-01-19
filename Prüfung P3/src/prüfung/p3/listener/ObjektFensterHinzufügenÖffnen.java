@@ -13,10 +13,11 @@ import prüfung.p3.kursObjekt.KursObjektGUI;
  * @author lindn
  */
 public class ObjektFensterHinzufügenÖffnen implements ActionListener{
+    public static KursObjektGUI gui;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        KursObjektGUI gui = new KursObjektGUI();
+        gui = new KursObjektGUI();
         
     }
     

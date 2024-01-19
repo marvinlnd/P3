@@ -11,7 +11,10 @@ import javax.swing.JOptionPane;
  * @author lindn
  */
 public class KursObjektMethoden {
+    
+    static int größeArray = 1;
 
+    static kursObjekt[] modulArray = new kursObjekt[größeArray];
     public static void addKursObjekt(KursObjektGUI gui) {
 
         System.out.println("Semester-Text: [" + KursObjektGUI.semester.getText() + "]");
@@ -25,6 +28,8 @@ public class KursObjektMethoden {
 
         int semester;
         double note;
+        
+        boolean bestanden;
 
         String semesterText = KursObjektGUI.semester.getText().trim();
         String noteText = KursObjektGUI.note.getText().trim();
@@ -50,11 +55,16 @@ public class KursObjektMethoden {
             return;
         }
 
-        boolean bestanden = KursObjektGUI.bestanden.isSelected();
+       if(note < 5){
+           bestanden = true;
+       }
+       else{
+           bestanden = false;
+       }
 
         kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
 
-        kurs.displayObjektInfo();
+       // modulArray[größeArray] = kurs;
     }
 
 }

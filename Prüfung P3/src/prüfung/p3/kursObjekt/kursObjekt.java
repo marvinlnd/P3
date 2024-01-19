@@ -71,7 +71,7 @@ public class kursObjekt {
     }
     
     public void bestanden (boolean bestanden) {
-        this.note = note;
+        this.bestanden = bestanden;
     }
     
     
