@@ -5,6 +5,7 @@
 package prüfung.p3.kursObjekt;
 
 import javax.swing.JOptionPane;
+import prüfung.p3.arrays.ObjektArrayClass;
 
 /**
  *
@@ -12,20 +13,18 @@ import javax.swing.JOptionPane;
  */
 public class KursObjektMethoden {
     
-    static int größeArray = 1;
+    
 
-    static kursObjekt[] modulArray = new kursObjekt[größeArray];
+    
+   
     public static void addKursObjekt(KursObjektGUI gui) {
 
-        System.out.println("Semester-Text: [" + KursObjektGUI.semester.getText() + "]");
-        System.out.println("Note-Text: [" + KursObjektGUI.note.getText() + "]");
+   
 
         String modul = gui.modul.getText().trim();
         String dozent = gui.dozent.getText().trim();
 
-        System.out.println("Semester-Text: [" + KursObjektGUI.semester.getText() + "]");
-        System.out.println("Note-Text: [" + KursObjektGUI.note.getText() + "]");
-
+        
         int semester;
         double note;
         
@@ -64,9 +63,15 @@ public class KursObjektMethoden {
 
         kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
 
-        modulArray[größeArray -1] = kurs;
-        größeArray++;
+        System.out.println(ObjektArrayClass.größeArray);
+       ObjektArrayClass.objektArray[ObjektArrayClass.größeArray -1] = kurs;
+       ObjektArrayClass.größeArray = ObjektArrayClass.größeArray +1;
         gui.showInfoDialog("Modul erfolgreich hinzugefügt");
+        System.out.println(kurs.getFach());
+        
+       
+       
+       System.out.println(ObjektArrayClass.größeArray);
     }
 
 }

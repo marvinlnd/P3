@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import prüfung.p3.PrüfungP3;
 import prüfung.p3.icons.ErstelltesIcon;
 import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
 
@@ -42,18 +43,9 @@ public class KursObjektGUI extends JFrame {
         bestätigen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Ja");
-                System.out.println("Modul: " + modul.getText());
-                System.out.println("Dozent: " + dozent.getText());
-                System.out.println("Semester: " + semester.getText());
-                System.out.println("Note: " + note.getText());
 
                 KursObjektMethoden.addKursObjekt(ObjektFensterHinzufügenÖffnen.gui);
                 
-                System.out.println("Modul: " + modul.getText());
-                System.out.println("Dozent: " + dozent.getText());
-                System.out.println("Semester: " + semester.getText());
-                System.out.println("Note: " + note.getText());
 
             }
         });
@@ -73,6 +65,7 @@ public class KursObjektGUI extends JFrame {
         add(panel);
         pack();
         setVisible(true);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     }
 
