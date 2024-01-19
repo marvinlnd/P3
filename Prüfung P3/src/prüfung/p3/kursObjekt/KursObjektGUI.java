@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import prüfung.p3.PrüfungP3;
 import prüfung.p3.icons.ErstelltesIcon;
 import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 /**
  *
@@ -51,13 +52,13 @@ public class KursObjektGUI extends JFrame {
         });
 
         JPanel panel = new JPanel();
-        panel.add(new JLabel("Modul: "));
+        panel.add(new JLabel(SpracheVariablen.modulName));
         panel.add(modul);
         panel.add(new JLabel("Note: "));
         panel.add(note);
         panel.add(new JLabel("Dozent: "));
         panel.add(dozent);
-        panel.add(new JLabel("Semester der Belegung: "));
+        panel.add(new JLabel("Wann soll das Modul belegt werden/Wann wurde es belegt?: "));
         panel.add(semester);
 
         panel.add(bestätigen);
