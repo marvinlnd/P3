@@ -45,7 +45,7 @@ public class KursObjektGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 KursObjektMethoden.addKursObjekt(ObjektFensterHinzufügenÖffnen.gui);
-                
+                new PrüfungP3();
 
             }
         });

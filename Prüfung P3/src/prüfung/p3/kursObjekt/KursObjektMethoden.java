@@ -63,11 +63,15 @@ public class KursObjektMethoden {
 
         kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
 
-        System.out.println(ObjektArrayClass.größeArray);
-       ObjektArrayClass.objektArray[ObjektArrayClass.größeArray -1] = kurs;
-       ObjektArrayClass.größeArray = ObjektArrayClass.größeArray +1;
-        gui.showInfoDialog("Modul erfolgreich hinzugefügt");
-        System.out.println(kurs.getFach());
+          if (ObjektArrayClass.größeArray == ObjektArrayClass.objektArray.length) {
+            // Array vergrößern, wenn es voll ist
+            kursObjekt[] newArray = new kursObjekt[ObjektArrayClass.objektArray.length + 1];
+            System.arraycopy(ObjektArrayClass.objektArray, 0, newArray, 0, ObjektArrayClass.objektArray.length);
+            ObjektArrayClass.objektArray = newArray;
+        }
+
+        ObjektArrayClass.objektArray[ObjektArrayClass.größeArray] = kurs;
+        ObjektArrayClass.größeArray++;
         
        
        
