@@ -44,7 +44,7 @@ public class KursObjektMethoden {
             semester = Integer.parseInt(semesterText);
             note = Double.parseDouble(noteText);
 
-            if (note < 1.0 || 5.0 > note) {
+            if (note < 1.0 || 5.0 < note) {
                 gui.showInfoDialog("Die Note muss zwischen 1.0 und 5.0 liegen");
                 return;
             }
@@ -64,7 +64,9 @@ public class KursObjektMethoden {
 
         kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
 
-       // modulArray[größeArray] = kurs;
+        modulArray[größeArray -1] = kurs;
+        größeArray++;
+        gui.showInfoDialog("Modul erfolgreich hinzugefügt");
     }
 
 }
