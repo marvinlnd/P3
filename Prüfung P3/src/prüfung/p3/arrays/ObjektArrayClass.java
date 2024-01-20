@@ -11,6 +11,11 @@ import prüfung.p3.kursObjekt.kursObjekt;
  * @author lindn
  */
 public class ObjektArrayClass {
-    public static int größeArray = 1;
-    public static kursObjekt[] objektArray = new kursObjekt[größeArray];
+    
+  
+    public static kursObjekt[] objektArray = new kursObjekt[1];
+
+    public static int größeArray = 0;
+
+   
 }

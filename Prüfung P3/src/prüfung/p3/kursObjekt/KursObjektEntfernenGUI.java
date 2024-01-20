@@ -13,16 +13,15 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import prüfung.p3.PrüfungP3;
 import prüfung.p3.icons.ErstelltesIcon;
-import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
+import prüfung.p3.listener.ObjektFensterEntfernenÖffnen;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 /**
  *
- * @author lindn
+ * @author Dennis Schäfer
  */
-public class KursObjektGUI extends JFrame {
+public class KursObjektEntfernenGUI extends JFrame {
 
     protected static JTextField modul;
     protected static JTextField note;
@@ -30,46 +29,41 @@ public class KursObjektGUI extends JFrame {
     protected static JTextField semester;
     protected static JCheckBox bestanden;
 
-    public KursObjektGUI() {
-        super("KursObjekt GUI");
+    public KursObjektEntfernenGUI() {
+        super("Modul entfernen");
 
         modul = new JTextField(10);
         note = new JTextField(10);
         dozent = new JTextField(10);
         semester = new JTextField(10);
+        JButton entfernen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/14.gif", 16, 16));
 
-        JButton bestätigen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/92.gif", 16, 16));
-
-       
-        bestätigen.addActionListener(new ActionListener() {
+        entfernen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                KursObjektMethoden.addKursObjekt(ObjektFensterHinzufügenÖffnen.gui);
-                new PrüfungP3();
-
+                String modulToRemove = modul.getText().trim();
+                KursObjektMethoden.removeKursObjekt(ObjektFensterEntfernenÖffnen.gui, modulToRemove);
             }
         });
 
+        
+        
         JPanel panel = new JPanel();
-        panel.add(new JLabel(SpracheVariablen.modulName));
+        panel.add(new JLabel("Welches " + SpracheVariablen.modul + " soll entfernt werden? "));
         panel.add(modul);
-        panel.add(new JLabel("Note: "));
-        panel.add(note);
-        panel.add(new JLabel("Dozent: "));
-        panel.add(dozent);
-        panel.add(new JLabel("Wann soll das Modul belegt werden/Wann wurde es belegt?: "));
-        panel.add(semester);
+        
 
-        panel.add(bestätigen);
-
+    
+        
+        
+        panel.add(entfernen);
         add(panel);
         pack();
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
     }
-
+    
     public void showInfoDialog(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
