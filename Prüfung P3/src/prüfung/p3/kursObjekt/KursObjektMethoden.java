@@ -107,7 +107,7 @@ public class KursObjektMethoden {
             ObjektArrayClass.größeArray--;
 
             gui.showInfoDialog("Objekt mit Modul '" + modulToRemove + "' wurde erfolgreich entfernt.");
-            System.out.println("Ende" + ObjektArrayClass.objektArray[0]);
+            System.out.println("Ende" + ObjektArrayClass.objektArray[0] + " " + ObjektArrayClass.größeArray);
         } else {
             gui.showInfoDialog("Objekt mit Modul '" + modulToRemove + "' wurde nicht gefunden.");
         }
