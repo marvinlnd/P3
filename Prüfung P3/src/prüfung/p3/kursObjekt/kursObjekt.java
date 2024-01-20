@@ -15,28 +15,25 @@ public class kursObjekt {
     private int semester;
     private double note;
     private boolean bestanden;
-    
-    public kursObjekt(String fach, String nameDozent, int semester, double note, boolean bestanden) {
+    private boolean isBelegt;
+
+    public kursObjekt(String fach, String nameDozent, int semester, double note, boolean bestanden, boolean isBelegt) {
         this.fach = fach;
         this.nameDozent = nameDozent;
         this.semester = semester;
         this.note = note;
         this.bestanden = bestanden;
+        this.isBelegt = isBelegt;
     }
 
- 
-  
-    
-    
- public String getFach() {
+    public String getFach() {
         return fach;
     }
 
     public void setFach(String fach) {
         this.fach = fach;
     }
-    
-    
+
 // Für den Dozenten
     public String getNameDozent() {
         return nameDozent;
@@ -45,8 +42,7 @@ public class kursObjekt {
     public void setNameDozent(String nameDozent) {
         this.nameDozent = nameDozent;
     }
-    
-    
+
 //Für das Semester
     public int getSemester() {
         return semester;
@@ -56,25 +52,31 @@ public class kursObjekt {
         this.semester = semester;
     }
 
-    
 // Für die Note    
-    public double getNote () {
+    public double getNote() {
         return note;
     }
-    
-    public void setNote (int note) {
+
+    public void setNote(int note) {
         this.note = note;
     }
-    
-        public boolean getBestanden () {
+
+    public boolean getBestanden() {
         return bestanden;
     }
-    
-    public void bestanden (boolean bestanden) {
+
+    public void bestanden(boolean bestanden) {
         this.bestanden = bestanden;
     }
     
-    
+    public boolean getisBelegt() {
+        return isBelegt;
+    }
+
+    public void isBelegt(boolean isBelegt) {
+        this.bestanden = bestanden;
+    }
+
     public void displayObjektInfo() {
         System.out.println("Fach Name: " + fach);
         System.out.println("Dozent: " + nameDozent);
@@ -82,20 +84,5 @@ public class kursObjekt {
         System.out.println("Note: " + note);
         System.out.println("Bestanden" + bestanden);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

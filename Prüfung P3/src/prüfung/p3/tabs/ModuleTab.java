@@ -14,39 +14,37 @@ import prüfung.p3.kursObjekt.KursObjektMethoden;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 public class ModuleTab {
+
     private JPanel panel;
 
     public ModuleTab() {
         panel = new JPanel(new BorderLayout());
-        
-        Object [][] data = new Object[ObjektArrayClass.objektArray.length][5];
-        
-       
-            for (int i = 0; i < ObjektArrayClass.objektArray.length; i++) {
-            if(ObjektArrayClass.objektArray[i] != null){
-                data[i][0] = ObjektArrayClass.objektArray[i].getFach();
-            data[i][1] = ObjektArrayClass.objektArray[i].getNote();
-            data[i][2] = ObjektArrayClass.objektArray[i].getBestanden() ? "Ja" : "Nein";
-            data[i][4] = ObjektArrayClass.objektArray[i].getNameDozent();
-            
-            }
-            
 
+        Object[][] data = new Object[ObjektArrayClass.objektArray.length][5];
+
+        for (int i = 0; i < ObjektArrayClass.objektArray.length; i++) {
+            if (ObjektArrayClass.objektArray[i] != null) {
+                data[i][0] = ObjektArrayClass.objektArray[i].getFach();
+                data[i][1] = ObjektArrayClass.objektArray[i].getNote();
+                data[i][2] = ObjektArrayClass.objektArray[i].getBestanden() ? "Ja" : "Nein";
+                data[i][3] = ObjektArrayClass.objektArray[i].getisBelegt() ? "Ja" : "Nein";
+                data[i][4] = ObjektArrayClass.objektArray[i].getNameDozent();
+
+            }
 
         }
 
-        
-        String[] columns = {SpracheVariablen.modulName, SpracheVariablen.note,SpracheVariablen.bestanden, "Momentan Belegt", "Dozent"};
-        
-               
-        DefaultTableModel model = new DefaultTableModel(data, columns){
-                @Override
-                public boolean isCellEditable(int row, int column){
-                    return column !=2;
-                }
-                };
-        
-                
+        String[] columns = {SpracheVariablen.modulName, SpracheVariablen.note, SpracheVariablen.bestanden, "Momentan Belegt", "Dozent"};
+
+        DefaultTableModel model = new DefaultTableModel(data, columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return column != 2 && column != 1;
+            }
+            
+            
+        };
+
         JTable table = new JTable(model);
 
         // Tabelle zum Panel hinzufügen
@@ -57,5 +55,3 @@ public class ModuleTab {
         return panel;
     }
 }
-
-

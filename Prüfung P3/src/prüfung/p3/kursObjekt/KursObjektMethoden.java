@@ -29,11 +29,12 @@ public class KursObjektMethoden {
         double note;
         
         boolean bestanden;
+        boolean belegt = gui.isBelegt.isSelected();
 
         String semesterText = KursObjektGUI.semester.getText().trim();
         String noteText = KursObjektGUI.note.getText().trim();
 
-        if (semesterText.isEmpty() || noteText.isEmpty()) {
+        if (semesterText.isEmpty()) {
             gui.showInfoDialog("Bitte geben Sie gültige Werte für Semester und Note ein");
             return;
         }
@@ -44,6 +45,7 @@ public class KursObjektMethoden {
             note = Double.parseDouble(noteText);
 
             if (note < 1.0 || 5.0 < note) {
+                
                 gui.showInfoDialog("Die Note muss zwischen 1.0 und 5.0 liegen");
                 return;
             }
@@ -61,7 +63,7 @@ public class KursObjektMethoden {
            bestanden = false;
        }
 
-        kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
+        kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden, belegt);
 
           if (ObjektArrayClass.größeArray == ObjektArrayClass.objektArray.length) {
             // Array vergrößern, wenn es voll ist
