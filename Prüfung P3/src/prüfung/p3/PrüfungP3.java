@@ -9,6 +9,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import prüfung.p3.icons.ErstelltesIcon;
 import prüfung.p3.kursObjekt.KursObjektMethoden;
@@ -54,6 +55,8 @@ public class PrüfungP3 extends JFrame {
         buttonPanel.add(entfernen);
         
         this.add(buttonPanel, BorderLayout.SOUTH);
+        
+        
     }
 
     private void initTabs() {

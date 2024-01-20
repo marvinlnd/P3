@@ -10,14 +10,14 @@ package prüfung.p3.kursObjekt;
  */
 public class kursObjekt {
 
-    private String fach;
+    private String modul;
     private String nameDozent;
     private int semester;
     private double note;
     private boolean bestanden;
     
-    public kursObjekt(String fach, String nameDozent, int semester, double note, boolean bestanden) {
-        this.fach = fach;
+    public kursObjekt(String Modul, String nameDozent, int semester, double note, boolean bestanden) {
+        this.modul = Modul;
         this.nameDozent = nameDozent;
         this.semester = semester;
         this.note = note;
@@ -28,12 +28,12 @@ public class kursObjekt {
   
     
     
- public String getFach() {
-        return fach;
+ public String getModul() {
+        return modul;
     }
 
     public void setFach(String fach) {
-        this.fach = fach;
+        this.modul = fach;
     }
     
     
@@ -76,7 +76,7 @@ public class kursObjekt {
     
     
     public void displayObjektInfo() {
-        System.out.println("Fach Name: " + fach);
+        System.out.println("Fach Name: " + modul);
         System.out.println("Dozent: " + nameDozent);
         System.out.println("Current Semester: " + semester);
         System.out.println("Note: " + note);
