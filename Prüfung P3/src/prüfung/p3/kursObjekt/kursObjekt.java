@@ -32,8 +32,8 @@ public class kursObjekt {
         return modul;
     }
 
-    public void setFach(String fach) {
-        this.modul = fach;
+    public void setModul(String modul) {
+        this.modul = modul;
     }
     
     

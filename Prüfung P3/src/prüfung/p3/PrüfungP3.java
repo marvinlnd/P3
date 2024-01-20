@@ -14,6 +14,7 @@ import javax.swing.JTabbedPane;
 import prüfung.p3.icons.ErstelltesIcon;
 import prüfung.p3.kursObjekt.KursObjektMethoden;
 import prüfung.p3.kursObjekt.kursObjekt;
+import prüfung.p3.listener.ObjektFensterEntfernenÖffnen;
 import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
 import prüfung.p3.listener.ObjektHinzufügenListener;
 import prüfung.p3.listener.WindowEventListener;
@@ -51,6 +52,7 @@ public class PrüfungP3 extends JFrame {
         JButton hinzufügen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/78.gif", 16, 16));
         hinzufügen.addActionListener(new ObjektFensterHinzufügenÖffnen());
         JButton entfernen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/14.gif", 16, 16));
+        entfernen.addActionListener(new ObjektFensterEntfernenÖffnen());
         buttonPanel.add(hinzufügen);
         buttonPanel.add(entfernen);
         
