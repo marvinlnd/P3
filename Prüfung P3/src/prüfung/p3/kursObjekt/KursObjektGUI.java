@@ -28,17 +28,15 @@ public class KursObjektGUI extends JFrame {
     protected static JTextField note;
     protected static JTextField dozent;
     protected static JTextField semester;
-    protected static JCheckBox isBelegt;
     protected static JCheckBox bestanden;
 
     public KursObjektGUI() {
-        super("Modul hinzufügen");
+        super("KursObjekt GUI");
 
         modul = new JTextField(10);
         note = new JTextField(10);
         dozent = new JTextField(10);
         semester = new JTextField(10);
-        isBelegt = new JCheckBox();
 
         JButton bestätigen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/92.gif", 16, 16));
 
@@ -62,8 +60,6 @@ public class KursObjektGUI extends JFrame {
         panel.add(dozent);
         panel.add(new JLabel("Wann soll das Modul belegt werden/Wann wurde es belegt?: "));
         panel.add(semester);
-        panel.add(new JLabel("Ist es momentan belegt? "));
-        panel.add(isBelegt);
 
         panel.add(bestätigen);
 

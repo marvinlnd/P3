@@ -10,30 +10,33 @@ package prüfung.p3.kursObjekt;
  */
 public class kursObjekt {
 
-    private String fach;
+    private String modul;
     private String nameDozent;
     private int semester;
     private double note;
     private boolean bestanden;
-    private boolean isBelegt;
-
-    public kursObjekt(String fach, String nameDozent, int semester, double note, boolean bestanden, boolean isBelegt) {
-        this.fach = fach;
+    
+    public kursObjekt(String Modul, String nameDozent, int semester, double note, boolean bestanden) {
+        this.modul = Modul;
         this.nameDozent = nameDozent;
         this.semester = semester;
         this.note = note;
         this.bestanden = bestanden;
-        this.isBelegt = isBelegt;
     }
 
-    public String getFach() {
-        return fach;
+ 
+  
+    
+    
+ public String getModul() {
+        return modul;
     }
 
     public void setFach(String fach) {
-        this.fach = fach;
+        this.modul = fach;
     }
-
+    
+    
 // Für den Dozenten
     public String getNameDozent() {
         return nameDozent;
@@ -42,7 +45,8 @@ public class kursObjekt {
     public void setNameDozent(String nameDozent) {
         this.nameDozent = nameDozent;
     }
-
+    
+    
 //Für das Semester
     public int getSemester() {
         return semester;
@@ -52,37 +56,46 @@ public class kursObjekt {
         this.semester = semester;
     }
 
+    
 // Für die Note    
-    public double getNote() {
+    public double getNote () {
         return note;
     }
-
-    public void setNote(int note) {
+    
+    public void setNote (int note) {
         this.note = note;
     }
-
-    public boolean getBestanden() {
+    
+        public boolean getBestanden () {
         return bestanden;
     }
-
-    public void bestanden(boolean bestanden) {
+    
+    public void bestanden (boolean bestanden) {
         this.bestanden = bestanden;
     }
     
-    public boolean getisBelegt() {
-        return isBelegt;
-    }
-
-    public void isBelegt(boolean isBelegt) {
-        this.bestanden = bestanden;
-    }
-
+    
     public void displayObjektInfo() {
-        System.out.println("Fach Name: " + fach);
+        System.out.println("Fach Name: " + modul);
         System.out.println("Dozent: " + nameDozent);
         System.out.println("Current Semester: " + semester);
         System.out.println("Note: " + note);
         System.out.println("Bestanden" + bestanden);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

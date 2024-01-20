@@ -29,12 +29,11 @@ public class KursObjektMethoden {
         double note;
         
         boolean bestanden;
-        boolean belegt = gui.isBelegt.isSelected();
 
         String semesterText = KursObjektGUI.semester.getText().trim();
         String noteText = KursObjektGUI.note.getText().trim();
 
-        if (semesterText.isEmpty()) {
+        if (semesterText.isEmpty() || noteText.isEmpty()) {
             gui.showInfoDialog("Bitte geben Sie gültige Werte für Semester und Note ein");
             return;
         }
@@ -45,7 +44,6 @@ public class KursObjektMethoden {
             note = Double.parseDouble(noteText);
 
             if (note < 1.0 || 5.0 < note) {
-                
                 gui.showInfoDialog("Die Note muss zwischen 1.0 und 5.0 liegen");
                 return;
             }
@@ -63,7 +61,7 @@ public class KursObjektMethoden {
            bestanden = false;
        }
 
-        kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden, belegt);
+        kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
 
           if (ObjektArrayClass.größeArray == ObjektArrayClass.objektArray.length) {
             // Array vergrößern, wenn es voll ist
@@ -80,4 +78,40 @@ public class KursObjektMethoden {
        System.out.println(ObjektArrayClass.größeArray);
     }
 
+   
+    
+    public static void removeKursObjekt(KursObjektGUI gui, String modulToRemove) {
+        if (ObjektArrayClass.größeArray == 0) {
+            gui.showInfoDialog("Das Array ist leer. Es gibt keine Objekte zu entfernen.");
+            return;
+        }
+
+        int indexToRemove = -1;
+
+        // Durchsuche das Array nach dem zu entfernenden Modul
+        for (int i = 0; i < ObjektArrayClass.größeArray; i++) {
+            if (ObjektArrayClass.objektArray[i].getModul().equals(modulToRemove)) {
+                indexToRemove = i;
+                break;
+            }
+        }
+
+        if (indexToRemove != -1) {
+            // Verschiebe die nachfolgenden Elemente im Array
+            System.arraycopy(ObjektArrayClass.objektArray, indexToRemove + 1, ObjektArrayClass.objektArray, indexToRemove,
+                    ObjektArrayClass.größeArray - indexToRemove - 1);
+
+            // Reduziere die Größe des Arrays
+            ObjektArrayClass.größeArray--;
+
+            gui.showInfoDialog("Objekt mit Modul '" + modulToRemove + "' wurde erfolgreich entfernt.");
+        } else {
+            gui.showInfoDialog("Objekt mit Modul '" + modulToRemove + "' wurde nicht gefunden.");
+        }
+    }
 }
+    
+    
+    
+    
+
