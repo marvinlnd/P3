@@ -19,15 +19,15 @@ public class ModuleTab {
     public ModuleTab() {
         panel = new JPanel(new BorderLayout());
         
-        Object [][] data = new Object[ObjektArrayClass.objektArray.length][5];
+        Object [][] data = new Object[ObjektArrayClass.objektList.size()][5];
         
        
-            for (int i = 0; i < ObjektArrayClass.objektArray.length; i++) {
-            if(ObjektArrayClass.objektArray[i] != null){
-                data[i][0] = ObjektArrayClass.objektArray[i].getModul();
-            data[i][1] = ObjektArrayClass.objektArray[i].getNote();
-            data[i][2] = ObjektArrayClass.objektArray[i].getBestanden() ? "Ja" : "Nein";
-            data[i][4] = ObjektArrayClass.objektArray[i].getNameDozent();
+            for (int i = 0; i < ObjektArrayClass.objektList.size(); i++) {
+            if(ObjektArrayClass.objektList.get(i) != null){
+                data[i][0] = ObjektArrayClass.objektList.get(i).getModul();
+            data[i][1] = ObjektArrayClass.objektList.get(i).getNote();
+            data[i][2] = ObjektArrayClass.objektList.get(i).getBestanden() ? "Ja" : "Nein";
+            data[i][4] = ObjektArrayClass.objektList.get(i).getNameDozent();
             
             }
             
