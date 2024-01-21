@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import prüfung.p3.PrüfungP3;
 import prüfung.p3.icons.ErstelltesIcon;
+import static prüfung.p3.kursObjekt.KursObjektEntfernenGUI.modul;
 import prüfung.p3.listener.ObjektFensterBearbeitenÖffnen;
 import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
@@ -32,7 +33,6 @@ public class KursObjektBearbeitenGUI extends JFrame {
     protected static JTextField versuche;
     protected static JCheckBox bestanden;
     protected static JCheckBox belegt;
-    
 
     public KursObjektBearbeitenGUI() {
         super("Modul bearbeiten");
@@ -43,11 +43,9 @@ public class KursObjektBearbeitenGUI extends JFrame {
         semester = new JTextField(10);
         versuche = new JTextField(10);
         belegt = new JCheckBox();
-        
 
         JButton bearbeiten = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/73.gif", 16, 16));
-        
-       
+
         bearbeiten.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -58,33 +56,18 @@ public class KursObjektBearbeitenGUI extends JFrame {
             }
         });
 
-        
-         
-        
-        
         JPanel panel = new JPanel();
-        panel.add(new JLabel(SpracheVariablen.module));
+        panel.add(new JLabel(SpracheVariablen.welches + SpracheVariablen.module + " "+ SpracheVariablen.bearbeiten));
         panel.add(modul);
-        panel.add(new JLabel(SpracheVariablen.note + ": "));
-        panel.add(note);
-        panel.add(new JLabel(SpracheVariablen.dozent + ": "));
-        panel.add(dozent);
-        panel.add(new JLabel(SpracheVariablen.zeitpunktDerBelegung + ": "));
-        panel.add(semester);
-        panel.add(new JLabel(SpracheVariablen.anzahlVersuche + ": "));
-        panel.add(versuche);
-        panel.add(new JLabel(SpracheVariablen.belegt));
-        panel.add(belegt);
-        
-    
+
         belegt.isSelected();
         panel.add(bearbeiten);
-       
+
         add(panel);
         pack();
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-  
+
     }
 
     public void showInfoDialog(String message) {

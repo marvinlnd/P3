@@ -13,7 +13,7 @@ import prüfung.p3.sprachauswahl.SpracheVariablen;
  *
  * @author lindn
  */
-public class SpracheDeutschListener implements ActionListener{
+public class SpracheDeutschListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -22,16 +22,18 @@ public class SpracheDeutschListener implements ActionListener{
         SpracheVariablen.neu = "Neu";
         SpracheVariablen.speichern = "Speichern";
         SpracheVariablen.beenden = "Beenden";
-        
+
         SpracheVariablen.einstellungen = "Einstellungen";
         SpracheVariablen.sprachauswahl = "Sprache";
-        
+
         SpracheVariablen.hilfe = "Hilfe";
-        
+        SpracheVariablen.hilfeText = "Um ein Modul hinzuzufügen, klicken Sie auf das Plus."
+                + " Um ein Modul zu löschen, drücken Sie auf das Minus";
+
         SpracheVariablen.module = "Module";
         SpracheVariablen.belegteModule = "Belegte Module";
         SpracheVariablen.abgeschlosseneModule = "Abgeschlossene Module";
-        
+
         SpracheVariablen.modulName = "Name";
         SpracheVariablen.note = "Note";
         SpracheVariablen.bestanden = "Bestanden";
@@ -39,10 +41,14 @@ public class SpracheDeutschListener implements ActionListener{
 
         SpracheVariablen.falscheNote = "Die Note muss zwischen 1.0 und 5.0 liegen";
         SpracheVariablen.semesterOderNoteFalsch = "Ungültige Eingabe für Semester oder Note";
-        
+
+        SpracheVariablen.welches = " welches ";
+        SpracheVariablen.entfernen = " soll entfernt werden?";
+        SpracheVariablen.bearbeiten = " soll bearbeitet?";
+
         SpracheVariablen.erfolgreichEntfernt = " wurde erfolgreich entfernt";
         SpracheVariablen.nichtGefunden = " wurde nicht gefunden";
         new PrüfungP3();
     }
-    
+
 }
