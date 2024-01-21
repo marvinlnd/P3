@@ -30,7 +30,9 @@ public class KursObjektMethoden {
         double note;
 
         boolean bestanden;
+ 
         boolean belegt = KursObjektHinzufügenGUI.belegt.isSelected();
+        System.out.println(belegt);
 
         String semesterText = KursObjektHinzufügenGUI.semester.getText().trim();
         String versucheText = KursObjektHinzufügenGUI.versuche.getText().trim();

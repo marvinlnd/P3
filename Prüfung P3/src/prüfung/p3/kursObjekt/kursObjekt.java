@@ -24,6 +24,7 @@ public class kursObjekt {
         this.semester = semester;
         this.note = note;
         this.bestanden = bestanden;
+        this.belegt = belegt;
     }
 
     public String getModul() {
