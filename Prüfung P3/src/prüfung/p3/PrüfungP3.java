@@ -22,7 +22,7 @@ import prüfung.p3.tabs.AbgeschlosseneModuleTab;
 import prüfung.p3.tabs.BelegteModuleTab;
 import prüfung.p3.tabs.ModuleTab;
 
-public class PrüfungP3 extends JFrame {
+public class PrüfungP3 extends JFrame implements java.io.Serializable{
 
     int größe = 1;
     public static PrüfungP3 ursprünglichesFenster;

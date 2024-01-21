@@ -52,7 +52,7 @@ public class KursObjektBearbeitenGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                KursObjektMethoden.editKursObjekt(ObjektFensterBearbeitenÖffnen.gui, String modulToEdit);  // Das klappt noch nicht
+               // KursObjektMethoden.editKursObjekt(ObjektFensterBearbeitenÖffnen.gui, String modulToEdit);  // Das klappt noch nicht
                 new PrüfungP3();
 
             }

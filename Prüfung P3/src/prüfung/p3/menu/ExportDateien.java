@@ -15,7 +15,7 @@ import prüfung.p3.PrüfungP3;
  */
 public class ExportDateien {
 
-    public void serializeObject(PrüfungP3 obj) {
+    public static void serializeObject(PrüfungP3 obj) {
         try {
             String filePath = "serializedObject.ser";
             FileOutputStream fileOut = new FileOutputStream(filePath);

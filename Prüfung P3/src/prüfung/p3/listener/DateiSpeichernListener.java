@@ -25,7 +25,7 @@ public class DateiSpeichernListener implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        ExportDateien.speichern(PrüfungP3.ursprünglichesFenster, dateiName);
+        ExportDateien.serializeObject(PrüfungP3.ursprünglichesFenster);
     }
 }
     

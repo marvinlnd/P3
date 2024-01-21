@@ -13,7 +13,7 @@ import prüfung.p3.arrays.ObjektArrayClass;
 import prüfung.p3.kursObjekt.KursObjektMethoden;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
-public class ModuleTab {
+public class ModuleTab implements java.io.Serializable{
 
     private JPanel panel;
     private JTable table;

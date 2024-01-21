@@ -8,7 +8,7 @@ package prüfung.p3.kursObjekt;
  *
  * @author Dennis Schäfer
  */
-public class kursObjekt {
+public class kursObjekt implements java.io.Serializable{
 
     private String modul;
     private String nameDozent;

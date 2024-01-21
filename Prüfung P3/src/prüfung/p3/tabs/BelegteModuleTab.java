@@ -12,7 +12,7 @@ import java.awt.BorderLayout;
 import prüfung.p3.arrays.ObjektArrayClass;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
-public class BelegteModuleTab {
+public class BelegteModuleTab implements java.io.Serializable{
     private final JPanel panel;
 
     public BelegteModuleTab() {

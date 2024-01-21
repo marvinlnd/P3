@@ -17,7 +17,7 @@ import prüfung.p3.PrüfungP3;
  */
 public class FileDateiSpeichern extends JMenuItem{
     
-    private PrüfungP3 pruefung; // Deklariere die Variable pruefung
+    
     private String dateiName; // Deklariere die Variable dateiName
     
     public FileDateiSpeichern(PrüfungP3 pruefung, String dateiName) {
@@ -27,9 +27,9 @@ public class FileDateiSpeichern extends JMenuItem{
         
         setIcon(ErstelltesIcon.createIcon(pfad, 14, 14));
         
-        this.pruefung = pruefung; // Initialisiere die Variable pruefung
+        
         this.dateiName = dateiName; // Initialisiere die Variable dateiName
         
-        addActionListener(new DateiSpeichernListener(obj));
+        addActionListener(new DateiSpeichernListener(PrüfungP3.ursprünglichesFenster, dateiName));
     }
 }
