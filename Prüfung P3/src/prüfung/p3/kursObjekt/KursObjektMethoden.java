@@ -4,14 +4,20 @@
  */
 package prüfung.p3.kursObjekt;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import prüfung.p3.PrüfungP3;
 import prüfung.p3.arrays.ObjektArrayClass;
+import static prüfung.p3.listener.ObjektFensterEntfernenÖffnen.gui;
+import prüfung.p3.tabs.ModuleTab;
 
 /**
  *
  * @author lindn
  */
 public class KursObjektMethoden {
+
+    private static String modulToRemove;
 
     public static void addKursObjekt(KursObjektHinzufügenGUI gui) {
 
@@ -55,61 +61,57 @@ public class KursObjektMethoden {
 
         kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
 
-        if (ObjektArrayClass.größeArray == ObjektArrayClass.objektArray.length -1) {
-            // Array vergrößern, wenn es voll ist
-            kursObjekt[] newArray = new kursObjekt[ObjektArrayClass.objektArray.length + 1];
-            System.arraycopy(ObjektArrayClass.objektArray, 0, newArray, 0, ObjektArrayClass.objektArray.length);
-            ObjektArrayClass.objektArray = newArray;
+        if (ObjektArrayClass.größeArrayList == ObjektArrayClass.objektList.size()) {
+            // ArrayList vergrößern, wenn sie voll ist
+            ObjektArrayClass.objektList.add(kurs);
+            ObjektArrayClass.größeArrayList++;
+
+            System.out.println(ObjektArrayClass.größeArrayList);
         }
+        ObjektArrayClass.objektList.set(ObjektArrayClass.größeArrayList - 1, kurs);
+        ObjektArrayClass.größeArrayList++;
 
-        ObjektArrayClass.objektArray[ObjektArrayClass.größeArray] = kurs;
-        ObjektArrayClass.größeArray++;
-
-        System.out.println(ObjektArrayClass.größeArray);
+        System.out.println(ObjektArrayClass.größeArrayList);
     }
 
-    public static void removeKursObjekt(KursObjektEntfernenGUI gui, String modulToRemove) {
    
-  System.out.println("Anfang" + ObjektArrayClass.objektArray[0]);
-        for (int i = 1; i < ObjektArrayClass.größeArray; i++) {
-            if (ObjektArrayClass.objektArray[i] != null && ObjektArrayClass.objektArray[i].getModul().equals(modulToRemove)) {
-                // Nur auf nicht-null-Objekte zugreifen und dann die Methode aufrufen
-                
-                System.out.println("Das Objekt konnte nicht entfernt werden! ");
-      
-            }
+
+    public static void removeKursObjekt(KursObjektEntfernenGUI gui, String modulToRemove) {
+        System.out.println("Anfang Liste: " + ObjektArrayClass.objektList);
+
+        if (ObjektArrayClass.objektList.isEmpty()) {
+            System.out.println("Die Liste ist leer");
+            return;
         }
 
         int indexToRemove = -1;
 
-        // Array durchsuchen
-        for (int i = 0; i < ObjektArrayClass.größeArray; i++) {
-            if (ObjektArrayClass.objektArray[i].getModul().equals(modulToRemove)) {
+        // Liste durchsuchen
+        for (int i = 0; i < ObjektArrayClass.objektList.size(); i++) {
+            if (ObjektArrayClass.objektList.get(i).getModul().equals(modulToRemove)) {
                 indexToRemove = i;
                 break;
-            }
-            else {
+            } else {
                 System.out.println("Es ist ein Fehler aufgetreten");
             }
         }
 
-        
-        
-        
         if (indexToRemove != -1) {
-           
-            // Verschiebe die nachfolgenden Elemente im Array
-            System.arraycopy(ObjektArrayClass.objektArray, indexToRemove + 1, ObjektArrayClass.objektArray, indexToRemove,
-                    ObjektArrayClass.größeArray - indexToRemove - 1);
-
-            
-            // Reduziere die Größe des Arrays
-            ObjektArrayClass.größeArray--;
-
+            // Entferne das Element aus der Liste
+            ObjektArrayClass.objektList.remove(indexToRemove);
             gui.showInfoDialog("Objekt mit Modul '" + modulToRemove + "' wurde erfolgreich entfernt.");
-            System.out.println("Ende" + ObjektArrayClass.objektArray[0] + " " + ObjektArrayClass.größeArray);
+            System.out.println("Anfang Liste: " + ObjektArrayClass.objektList);
+            
+            new PrüfungP3();
+            
+            // Aktualisiere die Tabelle
+          
         } else {
             gui.showInfoDialog("Objekt mit Modul '" + modulToRemove + "' wurde nicht gefunden.");
         }
+
+        System.out.println(ObjektArrayClass.größeArrayList);
     }
+
+//updaten der tabelle
 }

@@ -16,7 +16,7 @@ public class ObjektArrayClass {
   
   //  public static kursObjekt[] objektList = new kursObjekt[1];
 
-    public static int größeArray = 0;
+    public static int größeArrayList = 0;
     
     
     public static ArrayList<kursObjekt> objektList = new ArrayList<>();
