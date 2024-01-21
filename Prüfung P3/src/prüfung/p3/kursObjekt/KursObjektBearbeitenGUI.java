@@ -4,6 +4,7 @@
  */
 package prüfung.p3.kursObjekt;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -50,7 +51,7 @@ public class KursObjektBearbeitenGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                KursObjektMethoden.editKursObjekt(ObjektFensterBearbeitenÖffnen.gui);
+                KursObjektMethoden.editKursObjekt(ObjektFensterBearbeitenÖffnen.gui, String modulToEdit);
                 new PrüfungP3();
 
             }
@@ -70,7 +71,60 @@ public class KursObjektBearbeitenGUI extends JFrame {
 
     }
 
+    private void showEditDialog() {
+        JTextField modulField = new JTextField(modul.getText());
+        JTextField dozentField = new JTextField(dozent.getText());
+
+        JButton okButton = new JButton("OK");
+        okButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Hier aktualisieren Sie die Werte in den Textfeldern
+                modul.setText(modulField.getText());
+                dozent.setText(dozentField.getText());
+
+                // Fügen Sie hier weitere Aktualisierungen für andere Attribute hinzu
+
+                // Schließen Sie den Dialog
+                dispose();
+            }
+        });
+
+        JButton cancelButton = new JButton("Abbrechen");
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Schließen Sie den Dialog ohne Änderungen vorzunehmen
+                dispose();
+            }
+        });
+
+        JPanel editPanel = new JPanel(new BorderLayout());
+        editPanel.add(new JLabel("Modul:"), BorderLayout.WEST);
+        editPanel.add(modulField, BorderLayout.CENTER);
+        editPanel.add(new JLabel("Dozent:"), BorderLayout.WEST);
+        editPanel.add(dozentField, BorderLayout.CENTER);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(okButton);
+        buttonPanel.add(cancelButton);
+
+        // Erstellen Sie Ihren Dialog mit den erstellten Komponenten
+        // Hier können Sie ein GridLayout, GroupLayout oder ein anderes Layout-Manager verwenden
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.add(editPanel, BorderLayout.CENTER);
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+
+        setContentPane(mainPanel);
+        pack();
+        setLocationRelativeTo(null); // Zentrieren Sie den Dialog auf dem Bildschirm
+    }
+
     public void showInfoDialog(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
+    
+    
+    
+ 
 }
