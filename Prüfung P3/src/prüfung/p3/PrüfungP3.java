@@ -23,7 +23,7 @@ import prüfung.p3.tabs.ModuleTab;
 
 public class PrüfungP3 extends JFrame {
     int größe = 1;
-    private static PrüfungP3 ursprünglichesFenster;
+    public static PrüfungP3 ursprünglichesFenster;
     
     public PrüfungP3() {
         

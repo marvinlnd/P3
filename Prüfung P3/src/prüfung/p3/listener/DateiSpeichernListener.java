@@ -15,17 +15,17 @@ import prüfung.p3.PrüfungP3;
  */
 public class DateiSpeichernListener implements ActionListener {
     
-    private PrüfungP3 pruefung;
-    private String dateiName;
+   
+    private String dateiName = "Datei";
     
     public DateiSpeichernListener(PrüfungP3 pruefung, String dateiName) {
-        this.pruefung = pruefung;
+        
         this.dateiName = dateiName;
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        ExportDateien.speichern(pruefung, dateiName);
+        ExportDateien.speichern(PrüfungP3.ursprünglichesFenster, dateiName);
     }
 }
     
