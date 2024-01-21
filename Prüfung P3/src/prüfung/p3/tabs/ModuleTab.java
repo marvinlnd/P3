@@ -22,20 +22,22 @@ public class ModuleTab {
     public ModuleTab() {
         panel = new JPanel(new BorderLayout());
 
-        Object[][] data = new Object[ObjektArrayClass.objektList.size()][5];
+        Object[][] data = new Object[ObjektArrayClass.objektList.size()][6];
 
         for (int i = 0; i < ObjektArrayClass.objektList.size(); i++) {
             if (ObjektArrayClass.objektList.get(i) != null) {
                 data[i][0] = ObjektArrayClass.objektList.get(i).getModul();
                 data[i][1] = ObjektArrayClass.objektList.get(i).getNote();
-                data[i][2] = ObjektArrayClass.objektList.get(i).getBestanden() ? "Ja" : "Nein";
-                data[i][4] = ObjektArrayClass.objektList.get(i).getNameDozent();
+                data[i][2] = ObjektArrayClass.objektList.get(i).getVersuche();
+                data[i][3] = ObjektArrayClass.objektList.get(i).getBestanden() ? "Ja" : "Nein";
+                data[i][4] = ObjektArrayClass.objektList.get(i).getBelegt() ? "Ja" : "Nein";
+                data[i][5] = ObjektArrayClass.objektList.get(i).getNameDozent();
 
             }
 
         }
 
-        String[] columns = {SpracheVariablen.modulName, SpracheVariablen.note, SpracheVariablen.bestanden, "Momentan Belegt", "Dozent"};
+        String[] columns = {SpracheVariablen.modulName, SpracheVariablen.angestrebteNoteOderNote, SpracheVariablen.versuche, SpracheVariablen.bestanden, "Momentan Belegt", "Dozent"};
 
         DefaultTableModel model = new DefaultTableModel(data, columns) {
             @Override

@@ -37,6 +37,16 @@ public class SpracheEnglischListener implements ActionListener{
         SpracheVariablen.modulName = "Name";
         SpracheVariablen.note = "Grade";
         SpracheVariablen.bestanden = "Passed";
+        SpracheVariablen.dozent = "Lecturer";
+        
+        SpracheVariablen.falscheNote = "The grade has to be inbetween 1.0 and 5.0";
+        SpracheVariablen.semesterOderNoteFalsch = "Invalid entry for semester or grade";
+        
+        SpracheVariablen.welches = "Which ";
+        SpracheVariablen.entfernen = " should be removed?";
+        
+        SpracheVariablen.nichtGefunden = " could not be found";
+        SpracheVariablen.erfolgreichEntfernt = " successfully deleted";
 
         new PrüfungP3();
         

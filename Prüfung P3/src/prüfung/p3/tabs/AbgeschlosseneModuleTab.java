@@ -9,6 +9,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.BorderLayout;
+import prüfung.p3.arrays.ObjektArrayClass;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 public class AbgeschlosseneModuleTab {
     private final JPanel panel;
@@ -16,17 +18,23 @@ public class AbgeschlosseneModuleTab {
     public AbgeschlosseneModuleTab() {
         panel = new JPanel(new BorderLayout());
 
-        // Beispielmodule erstellen
-        Object[][] data = {
-                {"Mathe 1", "2.7", "Ja"},
-                {"Wissenschaftliches Arbeiten", "1.0", "Ja"},
-                {"Externes Rechnungswesen", "5.0", "Nein"},
-                {"Grundlagen der Informatik", "3.3", "Ja"},
-                {"Programmieren 1", "2.0", "Ja"},
-                {"Einführung Wirttschaftsinformatik", "3.0", "Ja"}
-        };
+        Object[][] data = new Object[ObjektArrayClass.objektList.size()][6];
+        boolean istBestanden;
 
-        String[] columns = {"Modulname", "Note", "Bestanden"};
+        for (int i = 0; i < ObjektArrayClass.objektList.size(); i++) {
+            istBestanden = ObjektArrayClass.objektList.get(i).getBestanden();
+            if (ObjektArrayClass.objektList.get(i) != null && istBestanden == true) {
+                data[i][0] = ObjektArrayClass.objektList.get(i).getModul();
+                data[i][1] = ObjektArrayClass.objektList.get(i).getNote();
+                data[i][2] = ObjektArrayClass.objektList.get(i).getVersuche();
+                data[i][3] = ObjektArrayClass.objektList.get(i).getBestanden() ? "Ja" : "Nein";
+                data[i][4] = ObjektArrayClass.objektList.get(i).getNameDozent();
+
+            }
+
+        }
+
+        String[] columns = {SpracheVariablen.modulName, SpracheVariablen.note, SpracheVariablen.versuche, SpracheVariablen.dozent};
 
         // Tabelle erstellen
         DefaultTableModel model = new DefaultTableModel(data, columns);

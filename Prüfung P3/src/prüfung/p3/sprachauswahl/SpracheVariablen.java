@@ -29,6 +29,23 @@ public class SpracheVariablen {
     
     public static String modulName = "Modulname";
     public static String note = "Note";
+    public static String angestrebteNoteOderNote = "Note/Angestrebte Note";
     public static String bestanden = "Bestanden";
+    public static String dozent = "Dozent";
+    public static String belegt = "Dieses Semester belegen? ";
+    
+    public static String falscheNote = "Die Note muss zwischen 1.0 und 5.0 liegen";
+    public static String semesterOderNoteFalsch = "Ungültige Eingabe für Semester oder Note";
+    public static String anzahlVersuche = "Wie oft hast du die Prüfung schon versucht?";
+    public static String zeitpunktDerBelegung = "Wann wurde das Modul belegt / Wann möchtest du es belegen?";
+    
+    public static String welches = "Welches ";
+    public static String entfernen = "soll entfernt werden?";
+    
+    public static String erfolgreichEntfernt = " wurde erfolgreich entfernt";
+    public static String nichtGefunden = " wurde nicht gefunden";
+    
+    public static String versuche = "Versuche";
+    
     
 }
