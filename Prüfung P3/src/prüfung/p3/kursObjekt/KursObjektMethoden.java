@@ -108,5 +108,9 @@ public class KursObjektMethoden {
         System.out.println(ObjektArrayClass.größeArrayList);
     }
 
+    public static void editKursObjekt(KursObjektBearbeitenGUI gui) {
+        
+    }
+    
 
 }
