@@ -20,6 +20,7 @@ import prüfung.p3.sprachauswahl.SpracheVariablen;
 import prüfung.p3.tabs.AbgeschlosseneModuleTab;
 import prüfung.p3.tabs.BelegteModuleTab;
 import prüfung.p3.tabs.ModuleTab;
+import prüfung.p3.menu.ExportDateien;
 
 public class PrüfungP3 extends JFrame {
     int größe = 1;
@@ -55,6 +56,9 @@ public class PrüfungP3 extends JFrame {
         
         this.add(buttonPanel, BorderLayout.SOUTH);
         
+        ExportDateien exportDateien = new ExportDateien();
+        exportDateien.serializeObject(this);
+        
         
     }
 
@@ -81,6 +85,7 @@ public class PrüfungP3 extends JFrame {
        
 
     }
+    
 }
 
 

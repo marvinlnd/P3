@@ -15,11 +15,20 @@ import prüfung.p3.PrüfungP3;
  */
 public class ExportDateien {
 
-    public static void speichern(PrüfungP3 pruefung, String dateiName) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(dateiName))) {
-            oos.writeObject(pruefung);
-            System.out.println("Objekt erfolgreich gespeichert.");
-        } catch (IOException e) {
+    public void serializeObject(PrüfungP3 obj) {
+        try {
+            String filePath = "serializedObject.ser";
+            FileOutputStream fileOut = new FileOutputStream(filePath);
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            
+            objectOut.writeObject(obj);
+            
+            objectOut.close();
+            fileOut.close();
+            
+            System.out.println("Objekt wurde erfolgreich serialisiert");
+            
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
