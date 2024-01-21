@@ -7,9 +7,7 @@ package prüfung.p3.menu;
 import javax.swing.JMenuItem;
 import prüfung.p3.icons.ErstelltesIcon;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
-import javax.swing.JFileChooser;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import prüfung.p3.listener.DateiÖffnenListener;
 
 /**
  *
@@ -22,25 +20,8 @@ public class FileDateiÖffnen extends JMenuItem {
         String pfad = "/prüfung/p3/icons/52.gif";
 
         setIcon(ErstelltesIcon.createIcon(pfad, 14, 14));
-
-        addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                öffneDatei();
-            }
-        });
-    }
-
-    private void öffneDatei() {
-        JFileChooser fileChooser = new JFileChooser();
-
-        int auswahl = fileChooser.showOpenDialog(null);
-
-        if (auswahl == JFileChooser.APPROVE_OPTION) {
-            String ausgewählterDateipfad = fileChooser.getSelectedFile().getAbsolutePath();
-            
-            System.out.println("Datei ausgewählt: " + ausgewählterDateipfad);
-        }
+        
+        addActionListener(new DateiÖffnenListener());
     }
 }
 
