@@ -35,7 +35,13 @@ public class SpracheDeutschListener implements ActionListener{
         SpracheVariablen.modulName = "Name";
         SpracheVariablen.note = "Note";
         SpracheVariablen.bestanden = "Bestanden";
+        SpracheVariablen.dozent = "Dozent";
 
+        SpracheVariablen.falscheNote = "Die Note muss zwischen 1.0 und 5.0 liegen";
+        SpracheVariablen.semesterOderNoteFalsch = "Ungültige Eingabe für Semester oder Note";
+        
+        SpracheVariablen.erfolgreichEntfernt = " wurde erfolgreich entfernt";
+        SpracheVariablen.nichtGefunden = " wurde nicht gefunden";
         new PrüfungP3();
     }
     

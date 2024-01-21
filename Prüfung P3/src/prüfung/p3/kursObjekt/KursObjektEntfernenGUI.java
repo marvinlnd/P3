@@ -50,7 +50,7 @@ public class KursObjektEntfernenGUI extends JFrame {
         
         
         JPanel panel = new JPanel();
-        panel.add(new JLabel("Welches " + SpracheVariablen.modul + " soll entfernt werden? "));
+        panel.add(new JLabel(SpracheVariablen.welches + SpracheVariablen.module + SpracheVariablen.entfernen));
         panel.add(modul);
         
 

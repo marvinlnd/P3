@@ -36,6 +36,16 @@ public class SpracheSpanischListener implements ActionListener{
         SpracheVariablen.modulName = "Nombre";
         SpracheVariablen.note = "Calificatión";
         SpracheVariablen.bestanden = "Aprobado";
+        SpracheVariablen.dozent = "Conferenciante";
+        
+        SpracheVariablen.falscheNote = "La calificación debe estar entre 1.0 y 5.0";
+        SpracheVariablen.semesterOderNoteFalsch = "Entrada no válida de semestre o grado";
+        
+        SpracheVariablen.welches = "Qué ";
+        SpracheVariablen.entfernen = " se debe eliminar?";
+        
+        SpracheVariablen.nichtGefunden = " no pudo ser encontrado";
+        SpracheVariablen.erfolgreichEntfernt = " fue eliminado exitosamente";
 
         
         new PrüfungP3();

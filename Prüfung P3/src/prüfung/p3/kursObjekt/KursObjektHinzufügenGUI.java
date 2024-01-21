@@ -28,7 +28,10 @@ public class KursObjektHinzufügenGUI extends JFrame {
     protected static JTextField note;
     protected static JTextField dozent;
     protected static JTextField semester;
+    protected static JTextField versuche;
     protected static JCheckBox bestanden;
+    protected static JCheckBox belegt;
+    
 
     public KursObjektHinzufügenGUI() {
         super("Modul hinuzufügen");
@@ -37,6 +40,9 @@ public class KursObjektHinzufügenGUI extends JFrame {
         note = new JTextField(10);
         dozent = new JTextField(10);
         semester = new JTextField(10);
+        versuche = new JTextField(10);
+        belegt = new JCheckBox();
+        
 
         JButton bestätigen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/92.gif", 16, 16));
         
@@ -58,28 +64,26 @@ public class KursObjektHinzufügenGUI extends JFrame {
         JPanel panel = new JPanel();
         panel.add(new JLabel(SpracheVariablen.module));
         panel.add(modul);
-        panel.add(new JLabel("Note: "));
+        panel.add(new JLabel(SpracheVariablen.note + ": "));
         panel.add(note);
-        panel.add(new JLabel("Dozent: "));
+        panel.add(new JLabel(SpracheVariablen.dozent + ": "));
         panel.add(dozent);
-        panel.add(new JLabel("Wann soll das Modul belegt werden/Wann wurde es belegt?: "));
+        panel.add(new JLabel(SpracheVariablen.zeitpunktDerBelegung + ": "));
         panel.add(semester);
-
+        panel.add(new JLabel(SpracheVariablen.anzahlVersuche + ": "));
+        panel.add(versuche);
+        panel.add(new JLabel(SpracheVariablen.belegt));
+        panel.add(belegt);
+        
     
-     
-        
-        
+        belegt.isSelected();
         panel.add(bestätigen);
        
         add(panel);
         pack();
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        
-
-        
-        
+  
     }
 
     public void showInfoDialog(String message) {

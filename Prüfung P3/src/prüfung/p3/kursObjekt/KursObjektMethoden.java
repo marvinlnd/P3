@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import prüfung.p3.PrüfungP3;
 import prüfung.p3.arrays.ObjektArrayClass;
 import static prüfung.p3.listener.ObjektFensterEntfernenÖffnen.gui;
+import prüfung.p3.sprachauswahl.SpracheVariablen;
 import prüfung.p3.tabs.ModuleTab;
 
 /**
@@ -25,11 +26,16 @@ public class KursObjektMethoden {
         String dozent = gui.dozent.getText().trim();
 
         int semester;
+        int versuche;
         double note;
 
         boolean bestanden;
+ 
+        boolean belegt = KursObjektHinzufügenGUI.belegt.isSelected();
+        System.out.println(belegt);
 
         String semesterText = KursObjektHinzufügenGUI.semester.getText().trim();
+        String versucheText = KursObjektHinzufügenGUI.versuche.getText().trim();
         String noteText = KursObjektHinzufügenGUI.note.getText().trim();
 
         if (semesterText.isEmpty() || noteText.isEmpty()) {
@@ -40,39 +46,36 @@ public class KursObjektMethoden {
         try {
 
             semester = Integer.parseInt(semesterText);
+            versuche = Integer.parseInt(versucheText);
             note = Double.parseDouble(noteText);
+            
 
             if (note < 1.0 || 5.0 < note) {
-                gui.showInfoDialog("Die Note muss zwischen 1.0 und 5.0 liegen");
+                gui.showInfoDialog(SpracheVariablen.falscheNote);
                 return;
             }
 
         } catch (NumberFormatException ex) {
 
-            gui.showInfoDialog("Ungültige Eingabe für Semester oder Note");
+            gui.showInfoDialog(SpracheVariablen.semesterOderNoteFalsch);
             return;
         }
 
-        if (note < 5) {
+        if (note < 5 && versuche > 0) {
             bestanden = true;
         } else {
             bestanden = false;
         }
 
-        kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
+        kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden, belegt);
 
         ObjektArrayClass.objektList.add(kurs);
-        
-        ObjektArrayClass.objektList.set(ObjektArrayClass.größeArrayList -1, kurs);
-        ObjektArrayClass.größeArrayList++;
 
-        System.out.println(ObjektArrayClass.objektList.size());
     }
 
    
 
     public static void removeKursObjekt(KursObjektEntfernenGUI gui, String modulToRemove) {
-        System.out.println("Anfang Liste: " + ObjektArrayClass.objektList);
 
         if (ObjektArrayClass.objektList.isEmpty()) {
             System.out.println("Die Liste ist leer");
@@ -81,7 +84,7 @@ public class KursObjektMethoden {
 
         int indexToRemove = -1;
 
-        // Liste durchsuchen
+
         for (int i = 0; i < ObjektArrayClass.objektList.size(); i++) {
             if (ObjektArrayClass.objektList.get(i).getModul().equals(modulToRemove)) {
                 indexToRemove = i;
@@ -92,17 +95,14 @@ public class KursObjektMethoden {
         }
 
         if (indexToRemove != -1) {
-            // Entferne das Element aus der Liste
+            
             ObjektArrayClass.objektList.remove(indexToRemove);
-            gui.showInfoDialog("Objekt mit Modul '" + modulToRemove + "' wurde erfolgreich entfernt.");
-            System.out.println("Anfang Liste: " + ObjektArrayClass.objektList);
+            gui.showInfoDialog(modulToRemove + SpracheVariablen.erfolgreichEntfernt);
             
             new PrüfungP3();
-            
-            // Aktualisiere die Tabelle
           
         } else {
-            gui.showInfoDialog("Objekt mit Modul '" + modulToRemove + "' wurde nicht gefunden.");
+            gui.showInfoDialog( modulToRemove + SpracheVariablen.nichtGefunden);
         }
 
         System.out.println(ObjektArrayClass.größeArrayList);
