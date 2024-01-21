@@ -23,6 +23,7 @@ public class SpracheVariablen {
     public static String hilfeText = "Anleitung";
     
     public static String module = "Module";
+    public static String modul = "Modul";
     public static String belegteModule = "Belegte Module";
     public static String abgeschlosseneModule = "Abgeschlossene Module";
     

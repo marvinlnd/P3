@@ -9,13 +9,11 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import prüfung.p3.icons.ErstelltesIcon;
-import prüfung.p3.kursObjekt.KursObjektMethoden;
 import prüfung.p3.kursObjekt.kursObjekt;
+import prüfung.p3.listener.ObjektFensterEntfernenÖffnen;
 import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
-import prüfung.p3.listener.ObjektHinzufügenListener;
 import prüfung.p3.listener.WindowEventListener;
 import prüfung.p3.menu.FileMenuBar;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
@@ -35,7 +33,7 @@ public class PrüfungP3 extends JFrame {
         
         ursprünglichesFenster = this;
         
-        kursObjekt[] objektArray = new kursObjekt[größe];
+        kursObjekt[] objektList = new kursObjekt[größe];
         
         this.setSize(500, 300);
         this.setJMenuBar(new FileMenuBar());
@@ -51,6 +49,7 @@ public class PrüfungP3 extends JFrame {
         JButton hinzufügen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/78.gif", 16, 16));
         hinzufügen.addActionListener(new ObjektFensterHinzufügenÖffnen());
         JButton entfernen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/14.gif", 16, 16));
+        entfernen.addActionListener(new ObjektFensterEntfernenÖffnen());
         buttonPanel.add(hinzufügen);
         buttonPanel.add(entfernen);
         

@@ -4,6 +4,7 @@
  */
 package prüfung.p3.arrays;
 
+import java.util.ArrayList;
 import prüfung.p3.kursObjekt.kursObjekt;
 
 /**
@@ -11,6 +12,14 @@ import prüfung.p3.kursObjekt.kursObjekt;
  * @author lindn
  */
 public class ObjektArrayClass {
-    public static int größeArray = 1;
-    public static kursObjekt[] objektArray = new kursObjekt[größeArray];
+    
+  
+  //  public static kursObjekt[] objektList = new kursObjekt[1];
+
+    public static int größeArrayList = 1;
+    
+    
+    public static ArrayList<kursObjekt> objektList = new ArrayList<>();
+
+   
 }

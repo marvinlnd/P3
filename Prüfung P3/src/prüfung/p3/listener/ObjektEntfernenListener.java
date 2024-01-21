@@ -6,7 +6,8 @@ package prüfung.p3.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import prüfung.p3.kursObjekt.KursObjektGUI;
+import prüfung.p3.kursObjekt.KursObjektEntfernenGUI;
+
 
 /**
  *
@@ -15,8 +16,8 @@ import prüfung.p3.kursObjekt.KursObjektGUI;
 
 public class ObjektEntfernenListener implements ActionListener{
     
-    private KursObjektGUI GUI;
-     public ObjektEntfernenListener(KursObjektGUI gui) {
+    private KursObjektEntfernenGUI GUI;
+     public ObjektEntfernenListener(KursObjektEntfernenGUI gui) {
         this.GUI = gui;
     }
 
