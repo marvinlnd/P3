@@ -46,7 +46,7 @@ public class PrüfungP3 extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
 
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 5));
 
         JButton hinzufügen = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/78.gif", 16, 16));
         hinzufügen.addActionListener(new ObjektFensterHinzufügenÖffnen());
