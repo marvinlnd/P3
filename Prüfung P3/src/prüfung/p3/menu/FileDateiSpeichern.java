@@ -30,6 +30,6 @@ public class FileDateiSpeichern extends JMenuItem{
         this.pruefung = pruefung; // Initialisiere die Variable pruefung
         this.dateiName = dateiName; // Initialisiere die Variable dateiName
         
-        addActionListener(new DateiSpeichernListener(pruefung, dateiName));
+        addActionListener(new DateiSpeichernListener(obj));
     }
 }
