@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import prüfung.p3.kursObjekt.KursObjektBearbeitenGUI;
 import prüfung.p3.kursObjekt.KursObjektEntfernenGUI;
+import static prüfung.p3.listener.ObjektFensterBearbeitenÖffnen.gui;
 
 /**
  *
@@ -23,7 +24,7 @@ public class ObjektBearbeitenListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         
-    
+    gui = new KursObjektBearbeitenGUI();
 
         
     }
