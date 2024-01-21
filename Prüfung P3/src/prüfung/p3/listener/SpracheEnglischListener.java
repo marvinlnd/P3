@@ -14,7 +14,7 @@ import prüfung.p3.sprachauswahl.SpracheVariablen;
  *
  * @author lindn
  */
-public class SpracheEnglischListener implements ActionListener{
+public class SpracheEnglischListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -23,35 +23,34 @@ public class SpracheEnglischListener implements ActionListener{
         SpracheVariablen.neu = "new File";
         SpracheVariablen.speichern = "Save File";
         SpracheVariablen.beenden = "Close File";
-        
+
         SpracheVariablen.einstellungen = "Settings";
         SpracheVariablen.sprachauswahl = "Language";
-        
+
         SpracheVariablen.hilfe = "Help";
         SpracheVariablen.hilfeText = "Instructions";
-        
+
         SpracheVariablen.module = "Lectures";
         SpracheVariablen.belegteModule = "Current Lectures";
         SpracheVariablen.abgeschlosseneModule = "Finished Lectures";
-        
+
         SpracheVariablen.modulName = "Name";
         SpracheVariablen.note = "Grade";
         SpracheVariablen.bestanden = "Passed";
         SpracheVariablen.dozent = "Lecturer";
-        
+
         SpracheVariablen.falscheNote = "The grade has to be inbetween 1.0 and 5.0";
         SpracheVariablen.semesterOderNoteFalsch = "Invalid entry for semester or grade";
-        
+
         SpracheVariablen.welches = "Which ";
         SpracheVariablen.entfernen = " should be removed?";
-        
+        SpracheVariablen.bearbeiten = "should be edited?";
+
         SpracheVariablen.nichtGefunden = " could not be found";
         SpracheVariablen.erfolgreichEntfernt = " successfully deleted";
 
         new PrüfungP3();
-        
-        
+
     }
 
-    
 }

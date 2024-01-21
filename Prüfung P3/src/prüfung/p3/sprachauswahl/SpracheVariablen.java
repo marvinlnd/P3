@@ -41,6 +41,7 @@ public class SpracheVariablen {
     
     public static String welches = "Welches ";
     public static String entfernen = "soll entfernt werden?";
+    public static String bearbeiten = "soll bearbeitet werden?";
     
     public static String erfolgreichEntfernt = " wurde erfolgreich entfernt";
     public static String nichtGefunden = " wurde nicht gefunden";
@@ -48,6 +49,7 @@ public class SpracheVariablen {
     public static String versuche = "Versuche";
     
     public static String angestrebteNote = "Angestrebte Note";
+    public static String hallo;
     
     
 }

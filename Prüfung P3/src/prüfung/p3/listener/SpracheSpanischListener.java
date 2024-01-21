@@ -43,6 +43,7 @@ public class SpracheSpanischListener implements ActionListener{
         
         SpracheVariablen.welches = "Qué ";
         SpracheVariablen.entfernen = " se debe eliminar?";
+        SpracheVariablen.bearbeiten = " se debe editar?";
         
         SpracheVariablen.nichtGefunden = " no pudo ser encontrado";
         SpracheVariablen.erfolgreichEntfernt = " fue eliminado exitosamente";

@@ -6,18 +6,19 @@ package prüfung.p3.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
-import prüfung.p3.sprachauswahl.SpracheVariablen;
+import prüfung.p3.kursObjekt.KursObjektBearbeitenGUI;
 
 /**
  *
- * @author lindn
+ * @author Dennis Schäfer
  */
-public class HilfeListener implements ActionListener{
+public class ObjektFensterBearbeitenÖffnen implements ActionListener{
+    public static KursObjektBearbeitenGUI gui;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(null, SpracheVariablen.hilfeText);
+        gui = new KursObjektBearbeitenGUI();
+        
     }
     
 }

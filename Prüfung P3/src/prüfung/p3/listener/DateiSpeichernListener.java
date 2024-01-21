@@ -7,6 +7,7 @@ package prüfung.p3.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import prüfung.p3.menu.ExportDateien;
+import prüfung.p3.PrüfungP3;
 
 /**
  *
@@ -14,10 +15,17 @@ import prüfung.p3.menu.ExportDateien;
  */
 public class DateiSpeichernListener implements ActionListener {
     
+   
+    private String dateiName = "Datei";
+    
+    public DateiSpeichernListener(PrüfungP3 pruefung, String dateiName) {
+        
+        this.dateiName = dateiName;
+    }
+    
+    @Override
     public void actionPerformed(ActionEvent e) {
-        ExportDateien exporter = new ExportDateien();
-        // Voraussetzung: Sie haben Zugriff auf das PrüfungP3-Objekt, das exportiert werden soll
-        exporter.serializeObject(obj);
+        ExportDateien.speichern(PrüfungP3.ursprünglichesFenster, dateiName);
     }
 }
     
