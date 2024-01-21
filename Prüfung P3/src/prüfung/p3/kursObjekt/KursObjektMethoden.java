@@ -61,17 +61,12 @@ public class KursObjektMethoden {
 
         kursObjekt kurs = new kursObjekt(modul, dozent, semester, note, bestanden);
 
-        if (ObjektArrayClass.größeArrayList == ObjektArrayClass.objektList.size()) {
-            // ArrayList vergrößern, wenn sie voll ist
-            ObjektArrayClass.objektList.add(kurs);
-            ObjektArrayClass.größeArrayList++;
-
-            System.out.println(ObjektArrayClass.größeArrayList);
-        }
-        ObjektArrayClass.objektList.set(ObjektArrayClass.größeArrayList - 1, kurs);
+        ObjektArrayClass.objektList.add(kurs);
+        
+        ObjektArrayClass.objektList.set(ObjektArrayClass.größeArrayList -1, kurs);
         ObjektArrayClass.größeArrayList++;
 
-        System.out.println(ObjektArrayClass.größeArrayList);
+        System.out.println(ObjektArrayClass.objektList.size());
     }
 
    
@@ -113,5 +108,5 @@ public class KursObjektMethoden {
         System.out.println(ObjektArrayClass.größeArrayList);
     }
 
-//updaten der tabelle
+
 }
