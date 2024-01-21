@@ -37,7 +37,7 @@ public class PrüfungP3 extends JFrame {
 
         kursObjekt[] objektList = new kursObjekt[größe];
 
-        this.setSize(500, 300);
+        this.setSize(800, 500);
         this.setJMenuBar(new FileMenuBar());
         this.addWindowListener(new WindowEventListener());
 
