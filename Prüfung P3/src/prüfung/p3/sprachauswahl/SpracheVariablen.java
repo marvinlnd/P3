@@ -47,5 +47,7 @@ public class SpracheVariablen {
     
     public static String versuche = "Versuche";
     
+    public static String angestrebteNote = "Angestrebte Note";
+    
     
 }

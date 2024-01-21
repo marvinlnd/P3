@@ -9,6 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.BorderLayout;
+import prüfung.p3.arrays.ObjektArrayClass;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 public class BelegteModuleTab {
@@ -16,18 +17,22 @@ public class BelegteModuleTab {
 
     public BelegteModuleTab() {
         panel = new JPanel(new BorderLayout());
+        Object[][] data = new Object[ObjektArrayClass.objektList.size()][4];
+        boolean istBelegt;
 
-        // Beispielmodule erstellen
-        Object[][] data = {
-                {"Mathe 2", "/", "Nein"},
-                {"Statistik", "/", "Nein"},
-                {"Kosten- und Leistungsrechnung", "/", "Nein"},
-                {"Software Engineering", "/", "Nein"},
-                {"Programmieren 2", "/", "Nein"},
-                {"IT-Projektmanagement", "/", "Nein"}
-        };
+        for (int i = 0; i < ObjektArrayClass.objektList.size(); i++) {
+            istBelegt = ObjektArrayClass.objektList.get(i).getBelegt();
+            if (ObjektArrayClass.objektList.get(i) != null && istBelegt == true) {
+                data[i][0] = ObjektArrayClass.objektList.get(i).getModul();
+                data[i][1] = ObjektArrayClass.objektList.get(i).getNote();
+                data[i][2] = ObjektArrayClass.objektList.get(i).getVersuche();
+                data[i][3] = ObjektArrayClass.objektList.get(i).getNameDozent();
 
-        String[] columns = {SpracheVariablen.modulName, SpracheVariablen.note, SpracheVariablen.bestanden};
+            }
+
+        }
+
+        String[] columns = {SpracheVariablen.modulName, SpracheVariablen.angestrebteNote, SpracheVariablen.versuche, SpracheVariablen.dozent};
 
         // Tabelle erstellen
         DefaultTableModel model = new DefaultTableModel(data, columns);
