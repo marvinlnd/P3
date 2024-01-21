@@ -129,7 +129,7 @@ public class KursObjektMethoden {
         kursObjekt kurs = ObjektArrayClass.objektList.get(indexToEdit);
 
         // Zeigen Sie das Bearbeitungsfenster an (hier müssen Sie die Klasse KursObjektBearbeitenGUI entsprechend anpassen)
-        gui.showEditDialog(kurs);
+        gui.showEditDialog();
 
         // Nachdem die Bearbeitung abgeschlossen ist, aktualisieren Sie das Kursobjekt in der Liste
         ObjektArrayClass.objektList.set(indexToEdit, kurs);
@@ -139,7 +139,7 @@ public class KursObjektMethoden {
 
         // Aktualisieren Sie die Tabelle oder die Ansicht nach Bedarf
         // z.B., wenn Sie eine Tabelle in Ihrer GUI verwenden
-        gui.updateTable();
+        new PrüfungP3();
 
     } else {
         // Das zu bearbeitende Kursobjekt wurde nicht gefunden

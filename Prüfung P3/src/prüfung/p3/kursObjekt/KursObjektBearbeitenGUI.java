@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.lang.String;
 import prüfung.p3.PrüfungP3;
 import prüfung.p3.icons.ErstelltesIcon;
 import static prüfung.p3.kursObjekt.KursObjektEntfernenGUI.modul;
@@ -51,7 +52,7 @@ public class KursObjektBearbeitenGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                KursObjektMethoden.editKursObjekt(ObjektFensterBearbeitenÖffnen.gui, String modulToEdit);
+                KursObjektMethoden.editKursObjekt(ObjektFensterBearbeitenÖffnen.gui, String modulToEdit);  // Das klappt noch nicht
                 new PrüfungP3();
 
             }
@@ -71,7 +72,7 @@ public class KursObjektBearbeitenGUI extends JFrame {
 
     }
 
-    private void showEditDialog() {
+    public void showEditDialog() {
         JTextField modulField = new JTextField(modul.getText());
         JTextField dozentField = new JTextField(dozent.getText());
 
