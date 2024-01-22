@@ -28,8 +28,8 @@ public class ModuleTab implements java.io.Serializable{
             if (ObjektArrayClass.objektList.get(i) != null) {
                 data[i][0] = ObjektArrayClass.objektList.get(i).getModul();
                 data[i][1] = ObjektArrayClass.objektList.get(i).getNote();
-                data[i][2] = ObjektArrayClass.objektList.get(i).getSemester();
-                data[i][3] = ObjektArrayClass.objektList.get(i).getVersuche();
+                data[i][2] = ObjektArrayClass.objektList.get(i).getVersuche();
+                data[i][3] = ObjektArrayClass.objektList.get(i).getSemester();
                 data[i][4] = ObjektArrayClass.objektList.get(i).getBestanden() ? "Ja" : "Nein";
                 data[i][5] = ObjektArrayClass.objektList.get(i).isBelegt() ? "Ja" : "Nein";
                 data[i][6] = ObjektArrayClass.objektList.get(i).getDozent();

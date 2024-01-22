@@ -59,14 +59,14 @@ public class KursObjektHinzufügenGUI extends JFrame {
         panel.add(modul);
         panel.add(new JLabel(SpracheVariablen.note + ": "));
         panel.add(note);
-        panel.add(new JLabel(SpracheVariablen.dozent + ": "));
-        panel.add(dozent);
-        panel.add(new JLabel(SpracheVariablen.zeitpunktDerBelegung + ": "));
-        panel.add(semester);
         panel.add(new JLabel(SpracheVariablen.anzahlVersuche + ": "));
         panel.add(versuche);
+        panel.add(new JLabel(SpracheVariablen.zeitpunktDerBelegung + ": "));
+        panel.add(semester);
         panel.add(new JLabel(SpracheVariablen.belegt));
         panel.add(belegt);
+        panel.add(new JLabel(SpracheVariablen.dozent + ": "));
+        panel.add(dozent);
 
         belegt.isSelected();
         panel.add(bestätigen);
