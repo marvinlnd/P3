@@ -88,7 +88,7 @@ public class ImportDateien {
     
     private static void initTabs(){
         
-        tabbedPane.removeAll();
+        //tabbedPane.removeAll();
 
         ModuleTab moduleTab = new ModuleTab();
         tabbedPane.addTab(SpracheVariablen.module, moduleTab.getPanel());
