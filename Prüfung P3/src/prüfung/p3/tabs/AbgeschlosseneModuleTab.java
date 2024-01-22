@@ -28,7 +28,7 @@ public class AbgeschlosseneModuleTab implements java.io.Serializable{
                 data[i][1] = ObjektArrayClass.objektList.get(i).getNote();
                 data[i][2] = ObjektArrayClass.objektList.get(i).getVersuche();
                 data[i][3] = ObjektArrayClass.objektList.get(i).getBestanden() ? "Ja" : "Nein";
-                data[i][4] = ObjektArrayClass.objektList.get(i).getNameDozent();
+                data[i][4] = ObjektArrayClass.objektList.get(i).getDozent();
 
             }
 

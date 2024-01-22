@@ -21,12 +21,12 @@ public class BelegteModuleTab implements java.io.Serializable{
         boolean istBelegt;
 
         for (int i = 0; i < ObjektArrayClass.objektList.size(); i++) {
-            istBelegt = ObjektArrayClass.objektList.get(i).getBelegt();
+            istBelegt = ObjektArrayClass.objektList.get(i).isBelegt();
             if (ObjektArrayClass.objektList.get(i) != null && istBelegt == true) {
                 data[i][0] = ObjektArrayClass.objektList.get(i).getModul();
                 data[i][1] = ObjektArrayClass.objektList.get(i).getNote();
                 data[i][2] = ObjektArrayClass.objektList.get(i).getVersuche();
-                data[i][3] = ObjektArrayClass.objektList.get(i).getNameDozent();
+                data[i][3] = ObjektArrayClass.objektList.get(i).getDozent();
 
             }
 

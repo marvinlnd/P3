@@ -5,6 +5,7 @@
 package prüfung.p3.kursObjekt;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -19,6 +20,7 @@ import prüfung.p3.PrüfungP3;
 import prüfung.p3.icons.ErstelltesIcon;
 import static prüfung.p3.kursObjekt.KursObjektEntfernenGUI.modul;
 import prüfung.p3.listener.ObjektFensterBearbeitenÖffnen;
+import prüfung.p3.listener.ObjektFensterEntfernenÖffnen;
 import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
@@ -28,17 +30,18 @@ import prüfung.p3.sprachauswahl.SpracheVariablen;
  */
 public class KursObjektBearbeitenGUI extends JFrame {
 
-    protected static JTextField modul;
-    protected static JTextField note;
-    protected static JTextField dozent;
-    protected static JTextField semester;
-    protected static JTextField versuche;
-    protected static JCheckBox bestanden;
-    protected static JCheckBox belegt;
+    private kursObjekt kurs;
+    private JTextField modul;
+    private JTextField note;
+    private JTextField dozent;
+    private JTextField semester;
+    private JTextField versuche;
+    private JCheckBox belegt;
 
-    public KursObjektBearbeitenGUI() {
+    public KursObjektBearbeitenGUI(kursObjekt kurs) {
         super("Modul bearbeiten");
 
+        this.kurs = kurs;
         modul = new JTextField(10);
         note = new JTextField(10);
         dozent = new JTextField(10);
@@ -46,35 +49,44 @@ public class KursObjektBearbeitenGUI extends JFrame {
         versuche = new JTextField(10);
         belegt = new JCheckBox();
 
-        JButton bearbeiten = new JButton(ErstelltesIcon.createIcon("/prüfung/p3/icons/73.gif", 16, 16));
+        JButton bearbeiten = new JButton("Bearbeiten");
 
         bearbeiten.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-               // KursObjektMethoden.editKursObjekt(ObjektFensterBearbeitenÖffnen.gui, String modulToEdit);  // Das klappt noch nicht
-                new PrüfungP3();
-
+                // Öffnen Sie das zweite Panel für die Details, wenn das Modul ausgewählt wurde
+                openDetailsPanel();
             }
         });
 
-        JPanel panel = new JPanel();
-        panel.add(new JLabel(SpracheVariablen.welches + SpracheVariablen.module + " "+ SpracheVariablen.bearbeiten));
+        JPanel panel = new JPanel(new GridLayout(3, 2, 5, 5)); // 3 Zeilen, 2 Spalten, Abstand 5x5
+        panel.add(new JLabel("Welches Modul möchten Sie bearbeiten?"));
         panel.add(modul);
-
-        belegt.isSelected();
+        panel.add(new JLabel()); // Leeres Label für den Abstand
         panel.add(bearbeiten);
 
         add(panel);
         pack();
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
     }
 
-    public void showEditDialog() {
+    public void openDetailsPanel() {
+        // Schließen Sie das aktuelle Fenster, um das zweite Panel zu öffnen
+        dispose();
+
+        // Öffnen Sie das zweite Panel für die Detailsbearbeitung
+        showEditDialog();
+    }
+
+    void showEditDialog() {
         JTextField modulField = new JTextField(modul.getText());
+        JTextField noteField = new JTextField(note.getText());
         JTextField dozentField = new JTextField(dozent.getText());
+        JTextField semesterField = new JTextField(semester.getText());
+        JTextField versucheField = new JTextField(versuche.getText());
+        JCheckBox belegtField = new JCheckBox();
+        belegtField.setSelected(belegt.isSelected());
 
         JButton okButton = new JButton("OK");
         okButton.addActionListener(new ActionListener() {
@@ -82,10 +94,21 @@ public class KursObjektBearbeitenGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Hier aktualisieren Sie die Werte in den Textfeldern
                 modul.setText(modulField.getText());
+                note.setText(noteField.getText());
                 dozent.setText(dozentField.getText());
+                semester.setText(semesterField.getText());
+                versuche.setText(versucheField.getText());
+                belegt.setSelected(belegtField.isSelected());
+
+                // Änderungen direkt auf das kursObjekt-Objekt anwenden
+                kurs.setModul(modul.getText());
+                kurs.setNote(Double.parseDouble(note.getText()));
+                kurs.setDozent(dozent.getText());
+                kurs.setSemester(Integer.parseInt(semester.getText()));
+                kurs.setVersuche(Integer.parseInt(versuche.getText()));
+                kurs.setBelegt(belegt.isSelected());
 
                 // Fügen Sie hier weitere Aktualisierungen für andere Attribute hinzu
-
                 // Schließen Sie den Dialog
                 dispose();
             }
@@ -100,11 +123,19 @@ public class KursObjektBearbeitenGUI extends JFrame {
             }
         });
 
-        JPanel editPanel = new JPanel(new BorderLayout());
-        editPanel.add(new JLabel("Modul:"), BorderLayout.WEST);
-        editPanel.add(modulField, BorderLayout.CENTER);
-        editPanel.add(new JLabel("Dozent:"), BorderLayout.WEST);
-        editPanel.add(dozentField, BorderLayout.CENTER);
+        JPanel editPanel = new JPanel(new GridLayout(6, 2, 5, 5)); // 6 Zeilen, 2 Spalten, Abstand 5x5
+        editPanel.add(new JLabel("Modul:"));
+        editPanel.add(modulField);
+        editPanel.add(new JLabel("Note:"));
+        editPanel.add(noteField);
+        editPanel.add(new JLabel("Dozent:"));
+        editPanel.add(dozentField);
+        editPanel.add(new JLabel("Semester:"));
+        editPanel.add(semesterField);
+        editPanel.add(new JLabel("Versuche:"));
+        editPanel.add(versucheField);
+        editPanel.add(new JLabel("Belegt:"));
+        editPanel.add(belegtField);
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(okButton);
@@ -119,13 +150,11 @@ public class KursObjektBearbeitenGUI extends JFrame {
         setContentPane(mainPanel);
         pack();
         setLocationRelativeTo(null); // Zentrieren Sie den Dialog auf dem Bildschirm
+        setVisible(true);
     }
 
+    // Weitere Methoden...
     public void showInfoDialog(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
-    
-    
-    
- 
 }

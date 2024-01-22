@@ -11,16 +11,16 @@ package prüfung.p3.kursObjekt;
 public class kursObjekt implements java.io.Serializable{
 
     private String modul;
-    private String nameDozent;
+    private String dozent;
     private int semester;
     private int versuche;
     private double note;
     private boolean bestanden;
-    public boolean belegt;
+    private boolean belegt;
 
     public kursObjekt(String Modul, String nameDozent, int semester, double note, boolean bestanden, boolean belegt) {
         this.modul = Modul;
-        this.nameDozent = nameDozent;
+        this.dozent = nameDozent;
         this.semester = semester;
         this.note = note;
         this.bestanden = bestanden;
@@ -36,12 +36,12 @@ public class kursObjekt implements java.io.Serializable{
     }
 
 // Für den Dozenten
-    public String getNameDozent() {
-        return nameDozent;
+    public String getDozent() {
+        return dozent;
     }
 
-    public void setNameDozent(String nameDozent) {
-        this.nameDozent = nameDozent;
+    public void setDozent(String dozent) {
+        this.dozent = dozent;
     }
 
 //Für das Semester
@@ -78,17 +78,17 @@ public class kursObjekt implements java.io.Serializable{
         this.bestanden = bestanden;
     }
 
-    public boolean getBelegt() {
+    public boolean isBelegt() {
         return belegt;
     }
 
-    public void belegt(boolean belegt) {
+    public void setBelegt(boolean belegt) {
         this.belegt = belegt;
     }
 
     public void displayObjektInfo() {
         System.out.println("Fach Name: " + modul);
-        System.out.println("Dozent: " + nameDozent);
+        System.out.println("Dozent: " + dozent);
         System.out.println("Current Semester: " + semester);
         System.out.println("Note: " + note);
         System.out.println("Bestanden" + bestanden);
