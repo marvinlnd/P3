@@ -17,6 +17,7 @@ public class DateiÖffnenListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         ImportDateien opener = new ImportDateien();
-        opener.öffneDatei();
+        ImportDateien.deserializeObject("serializedObject.ser");
+        ImportDateien.fenster();
     }
 }
