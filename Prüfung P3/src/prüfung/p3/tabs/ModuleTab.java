@@ -10,7 +10,6 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.BorderLayout;
 import prüfung.p3.arrays.ObjektArrayClass;
-import prüfung.p3.kursObjekt.KursObjektMethoden;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 
 public class ModuleTab implements java.io.Serializable{
@@ -47,7 +46,7 @@ public class ModuleTab implements java.io.Serializable{
             }
         };
 
-        // Tabelle zum Panel hinzufügen
+        
         table = new JTable(model);
         panel.add(new JScrollPane(table), BorderLayout.CENTER);
     }

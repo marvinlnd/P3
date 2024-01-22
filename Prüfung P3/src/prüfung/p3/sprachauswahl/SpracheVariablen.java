@@ -20,7 +20,7 @@ public class SpracheVariablen {
     public static String sprachauswahl = "Sprachauswahl";
     
     public static String hilfe = "Hilfe";
-    public static String hilfeText = "Anleitung";
+    public static String hilfeText = "Um ein Modul hinzuzufügen, klicken Sie auf das Plus. Wenn Sie ein Modul löschen wollen, drücken Sie auf das Minus";
     
     public static String module = "Module";
     public static String modul = "Modul";

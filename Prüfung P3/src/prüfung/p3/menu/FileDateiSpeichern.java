@@ -4,9 +4,7 @@
  */
 package prüfung.p3.menu;
 
-import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
-import static javax.swing.text.StyleConstants.setIcon;
 import prüfung.p3.icons.ErstelltesIcon;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
 import prüfung.p3.listener.DateiSpeichernListener;
@@ -18,7 +16,7 @@ import prüfung.p3.PrüfungP3;
 public class FileDateiSpeichern extends JMenuItem{
     
     
-    private String dateiName; // Deklariere die Variable dateiName
+    private String dateiName; 
     
     public FileDateiSpeichern(PrüfungP3 pruefung, String dateiName) {
         super(SpracheVariablen.speichern);
@@ -28,7 +26,7 @@ public class FileDateiSpeichern extends JMenuItem{
         setIcon(ErstelltesIcon.createIcon(pfad, 14, 14));
         
         
-        this.dateiName = dateiName; // Initialisiere die Variable dateiName
+        this.dateiName = dateiName; 
         
         addActionListener(new DateiSpeichernListener(PrüfungP3.ursprünglichesFenster, dateiName));
     }

@@ -13,7 +13,7 @@ import prüfung.p3.sprachauswahl.SpracheVariablen;
  *
  * @author lindn
  */
-public class SpracheSpanischListener implements ActionListener{
+public class SpracheSpanischListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -22,34 +22,35 @@ public class SpracheSpanischListener implements ActionListener{
         SpracheVariablen.neu = "Crear un Documento";
         SpracheVariablen.speichern = "Guardar Documento";
         SpracheVariablen.beenden = "Cerrar Documento";
-        
+
         SpracheVariablen.einstellungen = "Ajustes";
         SpracheVariablen.sprachauswahl = "Idioma";
-        
+
         SpracheVariablen.hilfe = "Ayuda";
-        SpracheVariablen.hilfeText = "Manual";
-        
+        SpracheVariablen.hilfeText = "Para agregar un módulo, haga clic en el signo más.\"\n"
+                + "                + \" Para eliminar un módulo, presione el signo menos\n"
+                + "";
+
         SpracheVariablen.module = "Módulos";
         SpracheVariablen.belegteModule = "Módulos ocupados";
         SpracheVariablen.abgeschlosseneModule = "Módulos completados";
-        
+
         SpracheVariablen.modulName = "Nombre";
         SpracheVariablen.note = "Calificatión";
         SpracheVariablen.bestanden = "Aprobado";
         SpracheVariablen.dozent = "Conferenciante";
-        
+
         SpracheVariablen.falscheNote = "La calificación debe estar entre 1.0 y 5.0";
         SpracheVariablen.semesterOderNoteFalsch = "Entrada no válida de semestre o grado";
-        
+
         SpracheVariablen.welches = "Qué ";
         SpracheVariablen.entfernen = " se debe eliminar?";
         SpracheVariablen.bearbeiten = " se debe editar?";
-        
+
         SpracheVariablen.nichtGefunden = " no pudo ser encontrado";
         SpracheVariablen.erfolgreichEntfernt = " fue eliminado exitosamente";
 
-        
         new PrüfungP3();
     }
-    
+
 }

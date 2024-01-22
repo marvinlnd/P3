@@ -13,7 +13,7 @@ import prüfung.p3.PrüfungP3;
  */
 public class FileDatei extends JMenu {
     
-    // Annahme: Du hast eine Instanz von PrüfungP3 namens 'pruefung' und einen Dateinamen namens 'dateiName'
+    
     private PrüfungP3 pruefung;
     private String dateiName;
     
@@ -22,7 +22,7 @@ public class FileDatei extends JMenu {
         this.add(new FileDateiÖffnen());
         this.add(new FileDateiNeu());
         this.addSeparator();
-        this.add(new FileDateiSpeichern(pruefung, dateiName)); // Übergebe die erforderlichen Argumente
+        this.add(new FileDateiSpeichern(pruefung, dateiName)); 
         this.addSeparator();
         this.add(new FileDateiBeenden());
     }

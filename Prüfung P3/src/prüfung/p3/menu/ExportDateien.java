@@ -5,7 +5,6 @@
 package prüfung.p3.menu;
 
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectOutputStream;
 import prüfung.p3.PrüfungP3;
 

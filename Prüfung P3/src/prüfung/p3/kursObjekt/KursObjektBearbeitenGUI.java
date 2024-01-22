@@ -15,7 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.lang.String;
 import prüfung.p3.PrüfungP3;
 import prüfung.p3.arrays.ObjektArrayClass;
 import prüfung.p3.icons.ErstelltesIcon;
@@ -51,14 +50,10 @@ public class KursObjektBearbeitenGUI extends JFrame {
         versuche = new JTextField(String.valueOf(kurs.getVersuche())); // Hier die Initialisierung mit dem Wert aus dem kurs-Objekt
         belegt = new JCheckBox();
         belegt.setSelected(kurs.isBelegt());
-        
+
         JButton bearbeiten = new JButton("Bearbeiten");
 
-        bearbeiten.addActionListener(new ObjektBearbeitenListener(this ,modul.getText())); 
-            
-        
-           
-        
+        bearbeiten.addActionListener(new ObjektBearbeitenListener(this, modul.getText()));
 
         JPanel panel = new JPanel(new GridLayout(3, 2, 5, 5)); // 3 Zeilen, 2 Spalten, Abstand 5x5
         panel.add(new JLabel("Welches Modul möchten Sie bearbeiten?"));

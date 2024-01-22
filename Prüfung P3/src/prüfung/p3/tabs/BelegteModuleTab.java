@@ -34,11 +34,11 @@ public class BelegteModuleTab implements java.io.Serializable{
 
         String[] columns = {SpracheVariablen.modulName, SpracheVariablen.angestrebteNote, SpracheVariablen.versuche, SpracheVariablen.dozent};
 
-        // Tabelle erstellen
+        
         DefaultTableModel model = new DefaultTableModel(data, columns);
         JTable table = new JTable(model);
 
-        // Tabelle zum Panel hinzufügen
+     
         panel.add(new JScrollPane(table), BorderLayout.CENTER);
     }
 

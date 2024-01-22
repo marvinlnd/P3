@@ -16,7 +16,7 @@ import prüfung.p3.sprachauswahl.SpracheVariablen;
  */
 public class FileHilfeText extends JMenuItem{
     FileHilfeText(){
-        super(SpracheVariablen.hilfeText);
+        super(SpracheVariablen.hilfe);
         this.addActionListener(new HilfeListener());
     }
 }

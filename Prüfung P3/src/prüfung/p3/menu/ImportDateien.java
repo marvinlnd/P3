@@ -10,7 +10,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -48,15 +47,15 @@ public class ImportDateien {
     }
 
     public static void fenster() {
-        // Annahme: "serializedObject.ser" ist die zuvor serialisierte Datei
+        
         PrüfungP3 deserializedObj = deserializeObject("serializedObject.ser");
 
-        // Hier können Sie das deserialisierte Objekt verwenden, z.B. Ihre GUI aktualisieren, etc.
+        
         if (deserializedObj != null) {
             SwingUtilities.invokeLater(() -> {
-                // Hier können Sie das deserialisierte Objekt verwenden, z.B. Ihre GUI aktualisieren, etc.
+                
                 JFrame frame = new JFrame("Deserialisiertes Fenster");
-                // Fügen Sie hier weitere Anpassungen für Ihr deserialisiertes Objekt hinzu
+                
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.setSize(800, 600);
                 frame.setVisible(true);
@@ -88,7 +87,7 @@ public class ImportDateien {
     
     private static void initTabs(){
         
-        //tabbedPane.removeAll();
+     
 
         ModuleTab moduleTab = new ModuleTab();
         tabbedPane.addTab(SpracheVariablen.module, moduleTab.getPanel());

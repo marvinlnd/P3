@@ -14,7 +14,7 @@ import prüfung.p3.kursObjekt.kursObjekt;
 public class ObjektArrayClass {
     
   
-  //  public static kursObjekt[] objektList = new kursObjekt[1];
+
 
     public static int größeArrayList = 1;
     

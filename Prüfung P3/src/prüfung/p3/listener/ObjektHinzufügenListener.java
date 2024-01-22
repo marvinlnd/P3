@@ -7,8 +7,7 @@ package prüfung.p3.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import prüfung.p3.kursObjekt.KursObjektHinzufügenGUI;
-import prüfung.p3.kursObjekt.KursObjektMethoden;
-import prüfung.p3.kursObjekt.kursObjekt;
+
 
 /**
  *

@@ -4,8 +4,6 @@
  */
 package prüfung.p3.kursObjekt;
 
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import prüfung.p3.PrüfungP3;
 import prüfung.p3.arrays.ObjektArrayClass;
 import static prüfung.p3.kursObjekt.KursObjektHinzufügenGUI.belegt;
@@ -14,9 +12,8 @@ import static prüfung.p3.kursObjekt.KursObjektHinzufügenGUI.modul;
 import static prüfung.p3.kursObjekt.KursObjektHinzufügenGUI.note;
 import static prüfung.p3.kursObjekt.KursObjektHinzufügenGUI.semester;
 import static prüfung.p3.kursObjekt.KursObjektHinzufügenGUI.versuche;
-import static prüfung.p3.listener.ObjektFensterEntfernenÖffnen.gui;
 import prüfung.p3.sprachauswahl.SpracheVariablen;
-import prüfung.p3.tabs.ModuleTab;
+
 
 /**
  *
@@ -132,10 +129,10 @@ public class KursObjektMethoden {
 
             kursObjekt kurs = ObjektArrayClass.objektList.get(indexToEdit);
 
-        // Öffnen Sie das zweite Panel für die Details
+       
         gui.showEditDialog();
 
-        // Nachdem die Bearbeitung abgeschlossen ist, aktualisieren Sie das Kursobjekt in der Liste
+        
         kurs.setModul(modul.getText());
         kurs.setNote(Double.parseDouble(note.getText()));
         kurs.setDozent(dozent.getText());
@@ -145,20 +142,20 @@ public class KursObjektMethoden {
 
         
         
-        // Fügen Sie das aktualisierte Kursobjekt zur Liste hinzu
+       
         ObjektArrayClass.objektList.set(indexToEdit, kurs);
 
         new PrüfungP3();
-        // Zeigen Sie eine Erfolgsmeldung an
+       
         gui.showInfoDialog("Objekt mit Modul '" + modulToEdit + "' wurde erfolgreich bearbeitet.");
 
-        // Aktualisieren Sie die Tabelle oder die Ansicht nach Bedarf
-        // z.B., wenn Sie eine Tabelle in Ihrer GUI verwenden
+        
+       
         new PrüfungP3();
 
 
         } else {
-            // Das zu bearbeitende Kursobjekt wurde nicht gefunden
+            
             gui.showInfoDialog("Objekt mit Modul '" + modulToEdit + "' wurde nicht gefunden.");
         }
     }

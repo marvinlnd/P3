@@ -35,7 +35,7 @@ public class kursObjekt implements java.io.Serializable{
         this.modul = modul;
     }
 
-// Für den Dozenten
+
     public String getDozent() {
         return dozent;
     }
@@ -44,7 +44,7 @@ public class kursObjekt implements java.io.Serializable{
         this.dozent = dozent;
     }
 
-//Für das Semester
+
     public int getSemester() {
         return semester;
     }
@@ -61,7 +61,7 @@ public class kursObjekt implements java.io.Serializable{
         this.versuche = versuche;
     }
 
-// Für die Note    
+ 
     public double getNote() {
         return note;
     }
