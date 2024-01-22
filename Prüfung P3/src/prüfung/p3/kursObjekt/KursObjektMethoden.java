@@ -143,9 +143,12 @@ public class KursObjektMethoden {
         kurs.setVersuche(Integer.parseInt(versuche.getText()));
         kurs.setBelegt(belegt.isSelected());
 
+        
+        
         // Fügen Sie das aktualisierte Kursobjekt zur Liste hinzu
         ObjektArrayClass.objektList.set(indexToEdit, kurs);
 
+        new PrüfungP3();
         // Zeigen Sie eine Erfolgsmeldung an
         gui.showInfoDialog("Objekt mit Modul '" + modulToEdit + "' wurde erfolgreich bearbeitet.");
 

@@ -17,8 +17,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.lang.String;
 import prüfung.p3.PrüfungP3;
+import prüfung.p3.arrays.ObjektArrayClass;
 import prüfung.p3.icons.ErstelltesIcon;
 import static prüfung.p3.kursObjekt.KursObjektEntfernenGUI.modul;
+import prüfung.p3.listener.ObjektBearbeitenListener;
 import prüfung.p3.listener.ObjektFensterBearbeitenÖffnen;
 import prüfung.p3.listener.ObjektFensterEntfernenÖffnen;
 import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;
@@ -42,22 +44,21 @@ public class KursObjektBearbeitenGUI extends JFrame {
         super("Modul bearbeiten");
 
         this.kurs = kurs;
-        modul = new JTextField(10);
-        note = new JTextField(10);
-        dozent = new JTextField(10);
-        semester = new JTextField(10);
-        versuche = new JTextField(10);
+        modul = new JTextField(kurs.getModul());  // Hier die Initialisierung mit dem Wert aus dem kurs-Objekt
+        note = new JTextField(String.valueOf(kurs.getNote())); // Hier die Initialisierung mit dem Wert aus dem kurs-Objekt
+        dozent = new JTextField(kurs.getDozent()); // Hier die Initialisierung mit dem Wert aus dem kurs-Objekt
+        semester = new JTextField(String.valueOf(kurs.getSemester())); // Hier die Initialisierung mit dem Wert aus dem kurs-Objekt
+        versuche = new JTextField(String.valueOf(kurs.getVersuche())); // Hier die Initialisierung mit dem Wert aus dem kurs-Objekt
         belegt = new JCheckBox();
-
+        belegt.setSelected(kurs.isBelegt());
+        
         JButton bearbeiten = new JButton("Bearbeiten");
 
-        bearbeiten.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Öffnen Sie das zweite Panel für die Details, wenn das Modul ausgewählt wurde
-                openDetailsPanel();
-            }
-        });
+        bearbeiten.addActionListener(new ObjektBearbeitenListener(this ,modul.getText())); 
+            
+        
+           
+        
 
         JPanel panel = new JPanel(new GridLayout(3, 2, 5, 5)); // 3 Zeilen, 2 Spalten, Abstand 5x5
         panel.add(new JLabel("Welches Modul möchten Sie bearbeiten?"));
@@ -73,7 +74,6 @@ public class KursObjektBearbeitenGUI extends JFrame {
 
     public void openDetailsPanel() {
         // Schließen Sie das aktuelle Fenster, um das zweite Panel zu öffnen
-        dispose();
 
         // Öffnen Sie das zweite Panel für die Detailsbearbeitung
         showEditDialog();
@@ -111,6 +111,7 @@ public class KursObjektBearbeitenGUI extends JFrame {
                 // Fügen Sie hier weitere Aktualisierungen für andere Attribute hinzu
                 // Schließen Sie den Dialog
                 dispose();
+                new PrüfungP3();
             }
         });
 

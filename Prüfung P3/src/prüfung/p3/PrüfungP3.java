@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import prüfung.p3.icons.ErstelltesIcon;
 import prüfung.p3.kursObjekt.kursObjekt;
+import prüfung.p3.listener.ObjektBearbeitenListener;
 import prüfung.p3.listener.ObjektFensterBearbeitenÖffnen;
 import prüfung.p3.listener.ObjektFensterEntfernenÖffnen;
 import prüfung.p3.listener.ObjektFensterHinzufügenÖffnen;

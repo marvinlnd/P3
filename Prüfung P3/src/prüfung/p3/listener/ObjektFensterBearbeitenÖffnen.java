@@ -6,6 +6,8 @@ package prüfung.p3.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import prüfung.p3.arrays.ObjektArrayClass;
+import static prüfung.p3.arrays.ObjektArrayClass.objektList;
 import prüfung.p3.kursObjekt.KursObjektBearbeitenGUI;
 import prüfung.p3.kursObjekt.kursObjekt;
 
@@ -22,11 +24,11 @@ public class ObjektFensterBearbeitenÖffnen implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-         kursObjekt kurs = new kursObjekt("Modulname", "Dozent", 1, 2.5, true, false);
+         kursObjekt kurs = new kursObjekt("Mathe 1", "Dozent", 1, 2.5, true, false);
 
         KursObjektBearbeitenGUI gui = new KursObjektBearbeitenGUI(kurs);
         if (gui != null) {
-            gui.openDetailsPanel();
+            new KursObjektBearbeitenGUI(kurs);
         } else {
             System.out.println("gui ist null. Stellen Sie sicher, dass es korrekt initialisiert wurde.");
         }
